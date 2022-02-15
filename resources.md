@@ -36,22 +36,27 @@ Aesthetic Resources:
 ## Philip
 
 Technical Resources:
-1. https://unity.com/unity/features/arfoundation – Unity AR, possible engine to use to develop for AR can also export on multiple devices
-2. https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/XRDevelopment/AR/HandheldAR/AROverview/ - Unreal AR, another engine, more C++ focused but the Blueprints in Unreal may help
-3. https://developers.google.com/ar/develop/getting-started – ARCore, an example of an AR SDK for Android, this on in particular is supported by Google (if we go platform specific)
-4. https://developer.apple.com/augmented-reality/ - iOS AR, linked an example of Android so here’s one of iOS, has links to also lead to resources and such
-5. https://blog.hootsuite.com/instagram-ar-filters/ - Instagram AR, searching around for some ideas of how to develop AR for mobile devices I came across this article discussing how Instagram actually uses AR for some of it’s filters
+1. https://unity.com/unity/features/arfoundation 
+– Unity AR, possible engine to use to develop for AR can also export on multiple devices
+2. https://docs.unrealengine.com/4.26/en-US/SharingAndReleasing/XRDevelopment/AR/HandheldAR/AROverview/ 
+– Unreal AR, another engine, more C++ focused but the Blueprints in Unreal may help
+3. https://developers.google.com/ar/develop/getting-started 
+– ARCore, an example of an AR SDK for Android, this on in particular is supported by Google (if we go platform specific)
+4. https://developer.apple.com/augmented-reality/ 
+– iOS AR, linked an example of Android so here’s one of iOS, has links to also lead to resources and such
+5. https://blog.hootsuite.com/instagram-ar-filters/ 
+– Instagram AR, searching around for some ideas of how to develop AR for mobile devices I came across this article discussing how Instagram actually uses AR for some of it’s filters
 
 Aesthetic Resources:
 1. https://www.youtube.com/watch?v=F7AOAuIgGoo 
 – Face Raiders 3DS Gameplay, possible similar app but minus the face capturing and instead base it off geographical location
-3. https://www.youtube.com/watch?v=2sj2iQyBTQs 
+2. https://www.youtube.com/watch?v=2sj2iQyBTQs 
 – Pokemon GO, if we REALLY lean into the gameism of the project, would focus less on key locations
-5. https://www.youtube.com/watch?v=OTC2mnbkJsQ 
+3. https://www.youtube.com/watch?v=OTC2mnbkJsQ 
 – Arcade shooter gameplay example, can do a sort of tour thing, guide people between tour locations, game and interactive things when you reach your destination kind of thing
-7. https://www.youtube.com/watch?v=6e6RK8o1fcs 
-- Petscop, can go for an older design for things, low poly, low texture size, or in general a simple design
-9. https://www.minecraft.net/en-us/article/minecraft-earth-coming-end 
+4. https://www.youtube.com/watch?v=6e6RK8o1fcs 
+– Petscop, can go for an older design for things, low poly, low texture size, or in general a simple design
+5. https://www.minecraft.net/en-us/article/minecraft-earth-coming-end 
 – Minecraft AR, allow for more interaction in the environment maybe
 
 ---
