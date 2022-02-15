@@ -1,4 +1,5 @@
-Technical resources:
+## Aspen
+Technical Resources:
 
 https://docs.opencv.org/3.4/d6/d00/tutorial_py_root.html
 
@@ -11,7 +12,7 @@ https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@4.2/manual/index.htm
 https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/XRDevelopment/
 
 
-Aesthetic resources:
+Aesthetic Resources:
 
 http://momar.gallery/
 
@@ -22,3 +23,31 @@ https://pikminbloom.com/en/
 https://www.youtube.com/watch?v=uIHPPtPBgHk
 
 https://www.youtube.com/watch?v=YkbWZiZ01G0
+
+---
+
+## Yuejia
+Technical Resources:
+
+https://techtutorialsx.com/2019/04/13/python-opencv-getting-video-from-camera/
+
+https://www.geeksforgeeks.org/python-opencv-capture-video-from-camera/
+
+https://docs.opencv.org/3.4/dd/d43/tutorial_py_video_display.html
+
+https://www.youtube.com/watch?v=EHLEf0sKJGk
+
+https://datahacker.rs/001-how-to-read-a-video-and-access-a-webcam-with-opencv-in-python/
+
+
+Aesthetic Resources:
+
+https://www.youtube.com/watch?v=kaettgK3Pwo
+
+https://www.youtube.com/watch?v=jI0cIXskuY0
+
+https://www.behance.net/gallery/130361813/EVOLVE-XI-Cyber-Space?tracking_source=search_projects_recommended%7Cdigital%20art
+
+https://www.origin.com/can/en-us/store/the-sims/the-sims-4/expansion/the-sims-4-cottage-living
+
+https://www.youtube.com/watch?v=gG5Lq2_7ENU
