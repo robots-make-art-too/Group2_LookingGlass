@@ -13,8 +13,6 @@ Aesthetic Resources:
 4. https://www.youtube.com/watch?v=uIHPPtPBgHk
 5. https://www.youtube.com/watch?v=YkbWZiZ01G0
 
----
-
 ## Julia
 
 Technical Resources:
@@ -30,8 +28,6 @@ Aesthetic Resources:
 3. http://rossin.co/
 4. https://www.artnews.com/art-in-america/features/augmented-reality-art-1234581120/
 5. https://overlyapp.com/blog/augmented-reality-art-opportunities-and-examples-for-artists-and-creatives/
-
----
 
 ## Philip
 
@@ -58,8 +54,6 @@ Aesthetic Resources:
 – Petscop, can go for an older design for things, low poly, low texture size, or in general a simple design
 5. https://www.minecraft.net/en-us/article/minecraft-earth-coming-end 
 – Minecraft AR, allow for more interaction in the environment maybe
-
----
 
 ## Shana
 Technical Resources:
@@ -90,8 +84,6 @@ Aesthetic Resources:
 - https://streetart.to/
 5. `Spatial -  a virtual world that uses VR for users to make avatars and their own spaces. (maybe we can take this idea an allow users to decorate a public space to their own desire? Spatial is like  IMVU or Habbo on steroids.)`
 - https://spatial.io/#creators
-
----
 
 ## Yuejia
 Technical Resources:
