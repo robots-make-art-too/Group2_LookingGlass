@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Group2_LookingGlass
 
 You can use the [editor on GitHub](https://github.com/robots-make-art-too/Group2_LookingGlass/edit/gh-pages/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
