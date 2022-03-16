@@ -10,7 +10,6 @@ We did get everyone to fill in what they were good (and bad) at in the Google Do
 ---
 
 # Phase 1
----
 ## Aesthetics
 We discussed the possibility of three different directions we could take the project in:
 - More of a **performance art piece** interacts with the environment in particular ways to provide commentary on a point or produce visually striking content
