@@ -3,3 +3,5 @@
 [DiscussionLog.md](DiscussionLog.md): A log of all of the discussions we have as a group
 
 [ContributionLog.md](ContributionLog.md): A log of every notable contribution made to the project, and who made it
+
+[Visit the website](https://robots-make-art-too.github.io/Group2_LookingGlass/)
