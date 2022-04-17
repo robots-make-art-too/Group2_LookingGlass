@@ -12,15 +12,18 @@
         <a-scene embedded arjs='sourceType: webcam;'>
             
             <a-assets>
-                <a-asset-item id="beachball-gltf" src="assets/models/beachball.glb"></a-asset-item>
+                <!-- <a-asset-item id="beachball-gltf" src="assets/models/beachball.glb"></a-asset-item> -->
+                <a-asset-item id="cube-obj" src="/assets/models/cube.obj"></a-asset-item> 
             </a-assets>
             
             <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
-                <a-entity id="beachball" scale="0.5 0.5 0.5" gltf-model="#beachball-gltf">
+                <!-- <a-entity id="beachball" scale="0.5 0.5 0.5" gltf-model="#beachball-gltf">
                      <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-                </a-entity>
+                </a-entity> -->
+
+                <a-obj-model src="#crate-obj"></a-obj-model>
                 
-                <a-text width="3" height="3" value="It's a beach ball!" color="blue" position="0.90 0 0" rotation="90 0 0"></a-text>
+                <!-- <a-text width="3" height="3" value="It's a beach ball!" color="blue" position="0.90 0 0" rotation="90 0 0"></a-text> -->
             </a-marker>
 
             <a-entity camera></a-entity>
