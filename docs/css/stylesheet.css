@@ -5,3 +5,7 @@
 #petInfo p {
     color: white;
 }
+
+#petInfo #text {
+    color: white;
+}
