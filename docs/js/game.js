@@ -20,4 +20,5 @@ function updateStatDisplay() {
     document.getElementById("name").textContent = pet.name;
     document.getElementById("happiness").textContent = pet.happiness;
     document.getElementById("hunger").textContent = pet.hunger;
+    document.getElementById("activity").textContent = pet.activity;
 }
