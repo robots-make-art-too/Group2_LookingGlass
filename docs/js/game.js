@@ -11,5 +11,13 @@ class Pet {
 function createPet() {
     let name = prompt("What will you name your pet?", "Big Floppa");
     pet = new Pet(name);
-    alert(pet.name);
+
+    document.getElementById("petInfo").style.visibility = "block";
+    updateStatDisplay();
+}
+
+function updateStatDisplay() {
+    document.getElementById("name").textContent = pet.name;
+    document.getElementById("happiness").textContent = pet.happiness;
+    document.getElementById("hunger").textContent = pet.hunger;
 }
