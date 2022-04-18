@@ -13,7 +13,6 @@ function createPet() {
     pet = new Pet(name);
 
     spawnNewPet('/assets/models/cube.glb');
-
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
 }
@@ -32,7 +31,7 @@ function spawnNewPet(source) {
     let petEntity = document.createElement('a-entity');
     petEntity.setAttribute('id', 'pet');
     petEntity.setAttribute('gltf-model', '#pet-gltf');
-    petEntity.object3D.position.set(0, 0, 0);
+    petEntity.object3D.position.set(1, 2, 3);
     petEntity.object3D.scale.set(0.5, 0.5, 0.5);
     scene.appendChild(petEntity);
 }
