@@ -19,17 +19,17 @@ function createPet() {
 }
 
 function spawnNewPet(source) {
-    var scene = document.querySelector('a-scene');
-    var assets = document.querySelector('a-assets');
+    let scene = document.querySelector('a-scene');
+    let assets = document.querySelector('a-assets');
 
     // First we need to initialize the model the pet will be using
-    var model = document.createElement('a-asset-item');
+    let model = document.createElement('a-asset-item');
     model.setAttribute('id', 'pet-gltf');
     model.setAttribute('src', source);
     assets.appendChild(model);
 
     // Then, we need to create the pet object from that model
-    var petEntity = document.createElement('a-entity');
+    let petEntity = document.createElement('a-entity');
     petEntity.setAttribute('id', 'pet');
     petEntity.setAttribute('gltf-model', '#pet-gltf');
     petEntity.object3D.position.set(0, 0, 0);
