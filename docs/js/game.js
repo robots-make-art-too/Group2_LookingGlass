@@ -21,7 +21,7 @@ function createPet() {
 function spawnNewPet() {
     var scene = document.querySelector('a-scene');
     var pet = document.createElement('a-entity');
-    pet.setAttribute('id', cube);
+    pet.setAttribute('id', 'cube');
     pet.setAttribute('gltf-model', document.querySelector('#cube-gltf'));
     pet.setAttribute('position', '0 0 0');
     scene.appendChild(pet);
