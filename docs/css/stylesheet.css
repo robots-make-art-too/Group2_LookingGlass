@@ -1,3 +1,7 @@
 #petInfo {
     display: none;
 }
+
+#petInfo p {
+    color: white;
+}
