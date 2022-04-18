@@ -19,10 +19,12 @@ function createPet() {
 }
 
 function spawnNewPet() {
-    var petObj = document.createElement('a-entity');
-    petObj.setAttribute('id', cube);
-    petObj.setAttribute('gltf-model', document.getElementById('cube-gltf'));
-    petObj.setAttribute('position', '0 0 0');
+    var scene = document.querySelector('a-scene');
+    var pet = document.createElement('a-entity');
+    pet.setAttribute('id', cube);
+    pet.setAttribute('gltf-model', document.querySelector('#cube-gltf'));
+    pet.setAttribute('position', '0 0 0');
+    scene.appendChild(pet);
 }
 
 function updateStatDisplay() {
