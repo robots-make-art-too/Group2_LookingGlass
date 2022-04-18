@@ -29,12 +29,12 @@ function spawnNewPet(source) {
     assets.appendChild(model);
 
     // Then, we need to create the pet object from that model
-    var pet = document.createElement('a-entity');
-    pet.setAttribute('id', 'pet');
-    pet.setAttribute('gltf-model', '#pet-gltf');
-    pet.object3D.position.set(0, 0, 0);
-    pet.object3D.scale.set(0.5, 0.5, 0.5);
-    scene.appendChild(pet);
+    var petEntity = document.createElement('a-entity');
+    petEntity.setAttribute('id', 'pet');
+    petEntity.setAttribute('gltf-model', '#pet-gltf');
+    petEntity.object3D.position.set(0, 0, 0);
+    petEntitypet.object3D.scale.set(0.5, 0.5, 0.5);
+    scene.appendChild(petEntity);
 }
 
 function updateStatDisplay() {
