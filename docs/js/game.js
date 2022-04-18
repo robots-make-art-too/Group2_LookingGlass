@@ -12,8 +12,17 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Big Floppa");
     pet = new Pet(name);
 
+    spawnNewPet();
+
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
+}
+
+function spawnNewPet() {
+    var petObj = document.createElement('a-entity');
+    petObj.setAttribute('id', cube);
+    petObj.setAttribute('gltf-model', document.getElementById('cube-gltf'));
+    petObj.setAttribute('position', '0 0 0');
 }
 
 function updateStatDisplay() {
