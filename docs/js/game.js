@@ -12,7 +12,7 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Big Floppa");
     pet = new Pet(name);
 
-    document.getElementById("petInfo").style.visibility = "block";
+    document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
 }
 
