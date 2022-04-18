@@ -2,8 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/stylesheet.css">
         <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
         <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+        <script src="js/game.js"></script>
 
         <title>Looking Glass AR</title>
     </head>
@@ -12,16 +14,28 @@
         <a-scene embedded arjs='sourceType: webcam;'>
             
             <a-assets>
-                <a-asset-item id="beachball-gltf" src="assets/models/beachball.glb"></a-asset-item>
+                <a-asset-item id="cube-gltf" src="/assets/models/cube.glb"></a-asset-item> 
             </a-assets>
             
             <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
-                <a-entity id="beachball" scale="0.5 0.5 0.5" gltf-model="#beachball-gltf">
-                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+                <a-entity id="cube" scale="0.5 0.5 0.5" gltf-model="#cube-gltf">
+                    <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
                 </a-entity>
+
                 
-                <a-text width="3" height="3" value="It's a beach ball!" color="blue" position="0.90 0 0" rotation="90 0 0"></a-text>
+                <!-- <a-text width="3" height="3" value="It's a beach ball!" color="blue" position="0.90 0 0" rotation="90 0 0"></a-text> -->
             </a-marker>
+
+            <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+                <button onclick="createPet()">Create a pet</button>
+                <div id="petInfo">
+                    <p>
+                        Name: <span id="name"></span>
+                        <br>
+                        Happiness: <span id="happiness"></span> / Hunger: <span id="hunger"></span> / Activity: <span id="activity"></span>
+                    </p>
+                </div>
+            </div>
 
             <a-entity camera></a-entity>
         </a-scene>
