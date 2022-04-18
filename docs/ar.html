@@ -13,15 +13,15 @@
             
             <a-assets>
                 <!-- <a-asset-item id="beachball-gltf" src="assets/models/beachball.glb"></a-asset-item> -->
-                <a-asset-item id="cube-obj" src="/assets/models/cube.obj"></a-asset-item> 
+                <a-asset-item id="cube-gltf" src="/assets/models/cube.glb"></a-asset-item> 
             </a-assets>
             
             <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
-                <!-- <a-entity id="cube" scale="0.5 0.5 0.5" obj-model="#cube-obj" material="color: blue">
+                <a-entity id="cube" scale="0.5 0.5 0.5" gltf-model="#cube-gltf">
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-                </a-entity> -->
+                </a-entity>
 
-                <a-obj-model src="#cube-obj"></a-obj-model>
+                <!-- <a-obj-model src="#cube-obj"></a-obj-model> -->
                 
                 <!-- <a-text width="3" height="3" value="It's a beach ball!" color="blue" position="0.90 0 0" rotation="90 0 0"></a-text> -->
             </a-marker>
