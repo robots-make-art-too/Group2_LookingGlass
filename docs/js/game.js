@@ -31,7 +31,8 @@ function spawnNewPet(source) {
     // Then, we need to create the pet object from that model
     var pet = document.createElement('a-entity');
     pet.setAttribute('id', 'pet');
-    pet.setAttribute('gltf-model', document.querySelector('pet-gltf'));
+    pet.setAttribute('gltf-model', '#pet-gltf');
+    pet.setAttribute('position', '0 0 0');
     scene.appendChild(pet);
 }
 
