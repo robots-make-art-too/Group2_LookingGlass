@@ -12,7 +12,7 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Big Floppa");
     pet = new Pet(name);
 
-    spawnNewPet('/assets/models/cube.glb');
+    spawnNewPet('/assets/models/beachball.glb');
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
 }
