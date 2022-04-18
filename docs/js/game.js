@@ -31,7 +31,7 @@ function spawnNewPet(source) {
     let petEntity = document.createElement('a-entity');
     petEntity.setAttribute('id', 'pet');
     petEntity.setAttribute('gltf-model', '#pet-gltf');
-    petEntity.object3D.position.set(1, 2, 3);
+    petEntity.object3D.position.set(0, 0, -1);
     petEntity.object3D.scale.set(0.005, 0.005, 0.005);
     scene.appendChild(petEntity);
 }
