@@ -33,6 +33,7 @@ function spawnNewPet(source) {
     pet.setAttribute('id', 'pet');
     pet.setAttribute('gltf-model', '#pet-gltf');
     pet.setAttribute('position', '0 0 0');
+    pet.setAttribute('scale', '0.5 0.5 0.5');
     scene.appendChild(pet);
 }
 
