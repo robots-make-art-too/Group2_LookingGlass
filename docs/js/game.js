@@ -12,7 +12,7 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Big Floppa");
     pet = new Pet(name);
 
-    spawnNewPet('/assets/models/beachball.glb');
+    spawnNewPet('/assets/models/cube.glb');
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
 }
@@ -32,7 +32,6 @@ function spawnNewPet(source) {
     petEntity.setAttribute('id', 'pet');
     petEntity.setAttribute('gltf-model', '#pet-gltf');
     petEntity.setAttribute('scale', '0.0001 0.0001 0.0001');
-    petEntity.object3D.position.set(0, 2, 0);
     scene.appendChild(petEntity);
 }
 
