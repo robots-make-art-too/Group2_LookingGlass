@@ -17,6 +17,7 @@
             <a-assets>
                 <a-asset-item id="tennis-ball-gltf" src="/assets/models/toys/tennis-ball.glb"></a-asset-item>
                 <a-asset-item id="orbit-ball-gltf" src="/assets/models/toys/orbit-ball.glb"></a-asset-item>
+                <a-asset-item id="cake-gltf" src="/assets/models/food/cake.glb"></a-asset-item>
             </a-assets>
             
             <a-marker type="pattern" id="tennis-ball-marker" url="/assets/markers/toys/tennis-ball-marker.patt">
@@ -26,7 +27,13 @@
             </a-marker>
 
             <a-marker type="pattern" id="orbit-ball-marker" url="/assets/markers/toys/orbit-ball-marker.patt">
-                <a-entity id="woven-ball" scale="10 10 10" gltf-model="#orbit-ball-gltf">
+                <a-entity id="orbit-ball" scale="10 10 10" gltf-model="#orbit-ball-gltf">
+                    <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+                </a-entity>
+            </a-marker>
+
+            <a-marker type="pattern" id="cake-marker" url="/assets/markers/food/cake-marker.patt">
+                <a-entity id="cake" scale="10 10 10" gltf-model="#tennis-ball-gltf">
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
                 </a-entity>
             </a-marker>
