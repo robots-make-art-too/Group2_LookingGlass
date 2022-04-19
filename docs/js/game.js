@@ -9,7 +9,7 @@ class Pet {
 }
 
 function createPet() {
-    let name = prompt("What will you name your pet?", "Big Floppa");
+    let name = prompt("What will you name your pet?", "Scrumbus");
     pet = new Pet(name);
 
     spawnNewPet('/assets/sprites/idle-pet.png');
