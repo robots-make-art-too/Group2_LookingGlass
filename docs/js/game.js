@@ -19,6 +19,7 @@ function createPet() {
     spawnNewPet('/assets/sprites/idle-pet.png');
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
+    setInterval(routineStatCheck, UPDATE_TIME);
 }
 
 function spawnNewPet(source) {
@@ -54,8 +55,6 @@ function routineStatCheck() {
     pet.activity -= IDLE_STAT_DECREASE;
     updateStatDisplay();
 }
-
-setInterval(routineStatCheck, UPDATE_TIME);
 
 function petFeed() {
     if (pet.hunger >= 100) {
