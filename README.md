@@ -1,1 +1,1 @@
-Develop branch live site: https://looking-glass-dev.netlify.app/
+Stable branch live site: https://robots-make-art-too.github.io/Group2_LookingGlass/
