@@ -64,7 +64,7 @@ function petFeed() {
         alert(pet.name + " refused to eat!");
     } else {
         pet.hunger += 25;
-        alert(pet.name + " gained 25 hunger!");
+        alert(pet.name + " gained 25 satiation!");
         updateStatDisplay();
     }
 }
@@ -82,7 +82,7 @@ function petPlay() {
 function petWalk() {
     if (unhappyDraw(20, 0.25)) {
         alert(pet.name + " refused to walk!");
-    } else if (pet.hunger > 10) {
+    } else if (pet.hunger < 10) {
         alert(pet.name + " is too hungry to walk!");
     } else {
         pet.hunger += 25;
