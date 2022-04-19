@@ -31,7 +31,6 @@ function spawnNewPet(source) {
     let petEntity = document.createElement('a-image');
     petEntity.setAttribute('id', 'pet');
     petEntity.setAttribute('src', source);
-    petEntity.setAttribute('scale', '0.5 0.5 0.5');
     scene.appendChild(petEntity);
 }
 
