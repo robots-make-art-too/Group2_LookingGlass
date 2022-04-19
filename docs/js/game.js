@@ -12,26 +12,26 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Big Floppa");
     pet = new Pet(name);
 
-    spawnNewPet('/assets/models/cube.glb');
+    spawnNewPet('/assets/sprites/idle-pet.png');
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
 }
 
 function spawnNewPet(source) {
     let scene = document.querySelector('a-scene');
-    let assets = document.querySelector('a-assets');
+    // let assets = document.querySelector('a-assets');
 
-    // First we need to initialize the model the pet will be using
-    let model = document.createElement('a-asset-item');
-    model.setAttribute('id', 'pet-gltf');
-    model.setAttribute('src', source);
-    assets.appendChild(model);
+    // // First we need to initialize the model the pet will be using
+    // let model = document.createElement('a-asset-item');
+    // model.setAttribute('id', 'pet-gltf');
+    // model.setAttribute('src', source);
+    // assets.appendChild(model);
 
     // Then, we need to create the pet object from that model
-    let petEntity = document.createElement('a-entity');
+    let petEntity = document.createElement('a-image');
     petEntity.setAttribute('id', 'pet');
-    petEntity.setAttribute('gltf-model', '#pet-gltf');
-    petEntity.setAttribute('scale', '0.0001 0.0001 0.0001');
+    petEntity.setAttribute('src', source);
+    petEntity.setAttribute('scale', '0.5 0.5 0.5');
     scene.appendChild(petEntity);
 }
 
