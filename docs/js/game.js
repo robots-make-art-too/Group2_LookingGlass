@@ -78,7 +78,7 @@ function petPlay() {
     }
 }
 
-function petActivity() {
+function petWalk() {
     if (unhappyDraw(20, 0.25)) {
         alert(pet.name + " refused to walk!");
     } else if (pet.hunger > 10) {
