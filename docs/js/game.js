@@ -52,6 +52,7 @@ function routineStatCheck() {
     pet.happiness -= IDLE_STAT_DECREASE;
     pet.hunger -= IDLE_STAT_DECREASE;
     pet.activity -= IDLE_STAT_DECREASE;
+    updateStatDisplay();
 }
 
 setInterval(routineStatCheck, UPDATE_TIME);
