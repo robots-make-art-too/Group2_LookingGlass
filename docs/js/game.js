@@ -92,7 +92,7 @@ function petWalk() {
 }
 
 function unhappyDraw(threshold, chance) {
-    return (pet.happiness >= threshold && Math.random() <= chance);
+    return (pet.happiness <= threshold && Math.random() <= chance);
 }
 
 function stateChanger(state) {
