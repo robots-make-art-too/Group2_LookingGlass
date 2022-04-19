@@ -14,13 +14,15 @@
         <a-scene embedded arjs='sourceType: webcam;'>
             
             <a-assets>
-                <a-asset-item id="cube-gltf" src="/assets/models/cube.glb"></a-asset-item> 
+                <!-- <a-asset-item id="cube-gltf" src="/assets/models/cube.glb"></a-asset-item>  -->
             </a-assets>
+
+            <!-- <a-image id="pet-test" src="assets/sprites/idle-pet.png" position="0 0 -5" width="2" height="2"></a-image> -->
             
             <a-marker type="pattern" url="assets/markers/pattern-marker.patt">
-                <a-entity id="cube" scale="0.5 0.5 0.5" gltf-model="#cube-gltf">
+                <!-- <a-entity id="cube" scale="0.5 0.5 0.5" gltf-model="#cube-gltf">
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-                </a-entity>
+                </a-entity> -->
 
                 
                 <!-- <a-text width="3" height="3" value="It's a beach ball!" color="blue" position="0.90 0 0" rotation="90 0 0"></a-text> -->
@@ -29,8 +31,11 @@
             <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
                 <button onclick="createPet()">Create a pet</button>
                 <div id="petInfo">
+                    <button onclick="petPlay()">Play</button>
+                    <button onclick="petFeed()">Feed</button>
+                    <button onclick="petWalk()">Walk</button>
                     <p>
-                        Name: <span id="name"></span>
+                        Name: <span id="name"></span> / <span id="age"></span> years old
                         <br>
                         Happiness: <span id="happiness"></span> / Hunger: <span id="hunger"></span> / Activity: <span id="activity"></span>
                     </p>
