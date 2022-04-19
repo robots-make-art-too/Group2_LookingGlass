@@ -2,9 +2,9 @@ class Pet {
     constructor(name) {
         this.name = name;
         this.age = 0;
-        this.happiness = 100;
-        this.hunger = 100;
-        this.activity = 100;
+        this.happiness = 50;
+        this.hunger = 50;
+        this.activity = 50;
     }
 }
 
@@ -42,4 +42,42 @@ function updateStatDisplay() {
     document.getElementById("happiness").textContent = pet.happiness;
     document.getElementById("hunger").textContent = pet.hunger;
     document.getElementById("activity").textContent = pet.activity;
+}
+
+function petFeed() {
+    if (pet.hunger >= 100) {
+        alert(pet.name + " is already full!");
+    } else if (unhappyDraw(0.25)) {
+        alert(pet.name + " refused to eat!");
+    } else {
+        pet.hunger += 25;
+        alert(pet.name + " gained 25 hunger!");
+        updateStatDisplay();
+    }
+}
+
+function petPlay() {
+    if (unhappyDraw(20, 0.25)) {
+        alert(pet.name + " refused to play!");
+    } else {
+        pet.happiness += 25;
+        alert(pet.name + " gained 25 happiness!");
+        updateStatDisplay();
+    }
+}
+
+function petActivity() {
+    if (unhappyDraw(20, 0.25)) {
+        alert(pet.name + " refused to walk!");
+    } else if (pet.hunger > 10) {
+        alert(pet.name + " is too hungry to walk!");
+    } else {
+        pet.hunger += 25;
+        alert(pet.name + " gained 25 hunger!");
+        updateStatDisplay();
+    }
+}
+
+function unhappyDraw(threshold, chance) {
+    return (pet.happiness >= threshold && Math.random() <= chance);
 }
