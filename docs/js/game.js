@@ -16,7 +16,7 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Scrumbus");
     pet = new Pet(name);
 
-    spawnNewPet('assets/sprites/idle-pet.png');
+    spawnNewPet('/assets/sprites/idle-pet.png');
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
     setInterval(routineStatCheck, UPDATE_TIME);
