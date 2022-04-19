@@ -1,3 +1,7 @@
+const UPDATE_TIME = 10000; // Time in ms to update stats
+const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
+var pet; // To be defined when pet is created
+
 class Pet {
     constructor(name) {
         this.name = name;
@@ -44,6 +48,14 @@ function updateStatDisplay() {
     document.getElementById("activity").textContent = pet.activity;
 }
 
+function routineStatCheck() {
+    pet.happiness -= IDLE_STAT_DECREASE;
+    pet.hunger -= IDLE_STAT_DECREASE;
+    pet.activity -= IDLE_STAT_DECREASE;
+}
+
+setInterval(routineStatCheck, UPDATE_TIME);
+
 function petFeed() {
     if (pet.hunger >= 100) {
         alert(pet.name + " is already full!");
@@ -80,4 +92,8 @@ function petActivity() {
 
 function unhappyDraw(threshold, chance) {
     return (pet.happiness >= threshold && Math.random() <= chance);
+}
+
+function stateChanger(state) {
+    document.getElementById("pet").setAttribute('src', '/assets/sprites/' + state + '-pet.png');
 }
