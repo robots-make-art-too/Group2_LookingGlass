@@ -85,8 +85,8 @@ function petWalk() {
     } else if (pet.hunger < 10) {
         alert(pet.name + " is too hungry to walk!");
     } else {
-        pet.hunger += 25;
-        alert(pet.name + " gained 25 hunger!");
+        pet.activity += 25;
+        alert(pet.name + " gained 25 activity points!");
         updateStatDisplay();
     }
 }
