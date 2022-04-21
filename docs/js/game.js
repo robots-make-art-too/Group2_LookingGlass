@@ -12,6 +12,25 @@ class Pet {
     }
 }
 
+AFRAME.registerComponent('markerhandler', {
+    tick: function() {
+        let activeMarker = document.querySelector("a-marker");
+        if(activeMarker.object3D.visible == true) {
+        // MARKER IS PRESENT
+            switch (activeMarker.id) {
+                case 'tennis-ball-marker':
+                    alert("Tennis ball");
+                    break;
+                default:
+                    alert("Something else");
+                    break;
+            }
+        } else {
+        // MARKER IS HIDDEN
+        }
+    }
+});
+
 function createPet() {
     let name = prompt("What will you name your pet?", "Scrumbus");
     pet = new Pet(name);
