@@ -53,7 +53,6 @@ function createPet() {
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
     setInterval(routineStatCheck, UPDATE_TIME);
-    setInterval(stateTimerEvent, 1000);
 }
 
 function spawnNewPet(source) {
