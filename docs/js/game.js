@@ -9,7 +9,7 @@ window.onload = function() {
     activeMarker.addEventListener("markerFound", (e) => {
         if (objectConsumed == false) {
             switch (activeMarker.id) {
-                case 'tennis-ball':
+                case 'tennis-ball-marker':
                     alert("Tennis ball");
             }
         }
