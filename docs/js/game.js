@@ -12,7 +12,7 @@ class Pet {
     }
 }
 
-AFRAME.registerComponent('markerhandler', {
+AFRAME.registerComponent('marker-handler', {
     tick: function() {
         let activeMarker = document.querySelector("a-marker");
         if(activeMarker.object3D.visible == true) {
@@ -76,6 +76,7 @@ function routineStatCheck() {
     updateStatDisplay();
 }
 
+// Base pet actions
 function petFeed() {
     if (pet.hunger >= 100) {
         alert(pet.name + " is already full!");
@@ -110,6 +111,7 @@ function petWalk() {
     }
 }
 
+// Misc functions
 function unhappyDraw(threshold, chance) {
     return (pet.happiness <= threshold && Math.random() <= chance);
 }
