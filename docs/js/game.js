@@ -119,7 +119,7 @@ function petFeed(statBoost) {
         alert(pet.name + " refused to eat!");
     } else {
         pet.hunger += statBoost;
-        alert(pet.name + " gained ${statBoost} satiation!");
+        alert(pet.name + ` gained ${statBoost} satiation!`);
         updateStatDisplay();
     }
 }
@@ -129,7 +129,7 @@ function petPlay(statBoost) {
         alert(pet.name + " refused to play!");
     } else {
         pet.happiness += statBoost;
-        alert(pet.name + " gained ${statBoost} happiness!");
+        alert(pet.name + ` gained ${statBoost} happiness!`);
         updateStatDisplay();
     }
 }
