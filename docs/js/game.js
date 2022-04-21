@@ -17,7 +17,7 @@ AFRAME.registerComponent('marker-handler', {
         let objectConsumed = false;
         let activeMarker = document.querySelector("a-marker");
 
-        if(activeMarker.object3D.visible == true && objectConsumed == true) {
+        if(activeMarker.object3D.visible == true && objectConsumed == false) {
             switch (activeMarker.id) {
                 case 'tennis-ball-marker':
                     alert("Tennis ball");
