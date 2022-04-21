@@ -3,6 +3,22 @@ const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
+var activeMarker = document.quertySelector('a-marker');
+
+activeMarker.addEventListener('markerFound', (e)=> {
+    if (objectConsumed == false) {
+        switch (activeMarker.id) {
+            case 'tennis-ball':
+                alert("Tennis ball");
+        }
+    }
+    objectConsumed = true;
+})
+
+activeMarker.addEventListener('markerLost', (e)=> {
+    objectConsumed = false;
+})
+
 class Pet {
     constructor(name) {
         this.name = name;
@@ -12,22 +28,6 @@ class Pet {
         this.activity = 50;
     }
 }
-
-AFRAME.registerComponent('marker-object', {
-    tick: function() {
-        let activeObject = document.querySelector("a-entity");
-
-        if (activeObject.object3D.visible == true) {
-            switch (activeObject.id) {
-                case 'tennis-ball':
-                    alert("Tennis ball");
-                    activeObject.object3D.visible = false;
-                    break;
-            }
-        } else {
-        }
-    }
-});
 
 function createPet() {
     let name = prompt("What will you name your pet?", "Scrumbus");
