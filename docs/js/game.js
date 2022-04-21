@@ -4,13 +4,12 @@ var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
 window.onload = function() {
-    let activeMarker = document.querySelector("a-marker");
+    const $markers = document.querySelector("a-marker");
 
-    activeMarker.addEventListener("markerFound", (e) => {
-        console.log(activeMarker.id);
+    $markers.forEach($marker => $activeMarker.addEventListener("markerFound", (e) => {
         if (objectConsumed == false) {
-            switch (activeMarker.id) {
-                case 'tennis-ball-marker':
+            switch ($marker.id) {
+                case 'marker-ball-marker':
                     petPlay(15);
                     break;
                 case 'bone-marker':
@@ -28,11 +27,11 @@ window.onload = function() {
             }
         }
         objectConsumed = true;
-    })
+    }));
 
     activeMarker.addEventListener("markerLost", (e) => {
         objectConsumed = false;
-    })
+    });
 }
 
 class Pet {
