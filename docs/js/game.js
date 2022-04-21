@@ -91,6 +91,7 @@ function updateStatDisplay() {
     } else if (pet.hunger <= 20) {
         if (pet.state != 'hungry') stateChanger('hungry');
     } else if (pet.happiness >= 80) {
+        console.log("here");
         if (pet.state != 'happy') stateChanger('happy');
     } else if (pet.state != 'idle') {
         stateChanger('idle');
