@@ -7,6 +7,7 @@ window.onload = function() {
     let activeMarker = document.querySelector("a-marker");
 
     activeMarker.addEventListener("markerFound", (e) => {
+        console.log(activeMarker.id);
         if (objectConsumed == false) {
             switch (activeMarker.id) {
                 case 'tennis-ball-marker':
