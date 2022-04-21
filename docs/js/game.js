@@ -128,7 +128,7 @@ function petPlay(statBoost) {
     if (unhappyDraw(20, 0.25)) {
         alert(pet.name + " refused to play!");
     } else {
-        pet.happiness += happinessBoost;
+        pet.happiness += statBoost;
         alert(pet.name + " gained 25 happiness!");
         updateStatDisplay();
     }
