@@ -15,13 +15,13 @@ class Pet {
 
 AFRAME.registerComponent('marker-object', {
     tick: function() {
-        let activeMarker = document.querySelector("a-marker");
+        let activeObject = document.querySelector("a-entity");
 
-        if (activeMarker.object3D.visible == true) {
-            switch (activeMarker.id) {
+        if (activeObject.object3D.visible == true) {
+            switch (activeObject.id) {
                 case 'tennis-ball-marker':
                     alert("Tennis ball");
-                    activeMarker.object3D.visible = false;
+                    activeObject.object3D.visible = false;
                     break;
                 default:
                     alert("Something else");
