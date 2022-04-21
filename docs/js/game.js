@@ -4,7 +4,7 @@ var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
 window.onload = function() {
-    const markers = document.querySelector("a-marker");
+    const markers = Object.keys(document.querySelector("a-marker"));
     console.log(markers);
     markers.forEach(marker => marker.addEventListener("markerFound", (e) => {
         if (objectConsumed == false) {
