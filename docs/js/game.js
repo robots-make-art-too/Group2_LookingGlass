@@ -17,18 +17,17 @@ AFRAME.registerComponent('marker-object', {
     tick: function() {
         let activeMarker = document.querySelector("a-marker");
 
-        if (activeMarker.object3D.visible == true && objectConsumed == false) {
+        if (activeMarker.object3D.visible == true) {
             switch (activeMarker.id) {
                 case 'tennis-ball-marker':
                     alert("Tennis ball");
+                    activeMarker.object3D.visible = false;
                     break;
                 default:
                     alert("Something else");
                     break;
             }
-            objectConsumed = true;
         } else {
-            objectConsumed = false;
         }
     }
 });
