@@ -22,13 +22,15 @@ var objectConsumed = false; // So that a marker only spawns an object once each 
 
 var m = document.querySelector('a-marker');
 
-m.addEventListener("markerFound", (e) => {
-   alert("found");
-})
+if (m) {
+    m.addEventListener("markerFound", (e) => {
+    alert("found");
+    })
 
-m.addEventListener("markerLost", (e) => {
-   alert("lost");
-})
+    m.addEventListener("markerLost", (e) => {
+    alert("lost");
+    })
+}
 
 class Pet {
     constructor(name) {
