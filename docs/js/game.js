@@ -5,7 +5,7 @@ var objectConsumed = false; // So that a marker only spawns an object once each 
 
 window.onload = function() {
     const $markers = document.querySelector("a-marker");
-
+    console.log($markers);
     $markers.forEach($marker => $activeMarker.addEventListener("markerFound", (e) => {
         if (objectConsumed == false) {
             switch ($marker.id) {
