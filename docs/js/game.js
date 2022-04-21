@@ -4,8 +4,8 @@ var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
 var activeMarker = document.quertySelector('a-marker');
-
-activeMarker.addEventListener('markerFound', (e)=> {
+activeMarker.addEventListener("markerFound", (e)=> {
+    console.log(activeMarker.id);
     if (objectConsumed == false) {
         switch (activeMarker.id) {
             case 'tennis-ball':
@@ -15,7 +15,7 @@ activeMarker.addEventListener('markerFound', (e)=> {
     objectConsumed = true;
 })
 
-activeMarker.addEventListener('markerLost', (e)=> {
+activeMarker.addEventListener("markerLost", (e) => {
     objectConsumed = false;
 })
 
