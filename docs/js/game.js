@@ -3,32 +3,21 @@ const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
-// var activeMarker = document.querySelector('a-marker');
-// activeMarker.addEventListener("markerFound", (e) => {
-//     console.log("found");
-//     // if (objectConsumed == false) {
-//     //     switch (activeMarker.id) {
-//     //         case 'tennis-ball':
-//     //             alert("Tennis ball");
-//     //     }
-//     // }
-//     // objectConsumed = true;
-// })
-
-// activeMarker.addEventListener("markerLost", (e) => {
-//     // objectConsumed = false;
-//     console.log("lost");
-// })
-
 window.onload = function() {
     let activeMarker = document.querySelector("a-marker");
 
     activeMarker.addEventListener("markerFound", (e) => {
-        console.log("found");
+        if (objectConsumed == false) {
+            switch (activeMarker.id) {
+                case 'tennis-ball':
+                    alert("Tennis ball");
+            }
+        }
+        objectConsumed = true;
     })
 
     activeMarker.addEventListener("markerLost", (e) => {
-        console.log("lost");
+        objectConsumed = false;
     })
 }
 
