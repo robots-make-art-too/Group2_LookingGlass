@@ -2,6 +2,7 @@ const UPDATE_TIME = 5000; // Time in ms to update stats
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
+var stateTimer = 0; // For timed pet states
 
 window.onload = function() {
     let activeMarker = document.querySelector("a-marker");
@@ -10,7 +11,20 @@ window.onload = function() {
         if (objectConsumed == false) {
             switch (activeMarker.id) {
                 case 'tennis-ball-marker':
-                    alert("Tennis ball");
+                    petPlay(15);
+                    break;
+                case 'bone-marker':
+                    petPlay(20);
+                    break;
+                case 'orbit-ball-marker':
+                    petPlay(25);
+                    break;
+                case 'pet-food-marker':
+                    petFeed(20);
+                    break;
+                case 'cake-marker':
+                    petFeed(30);
+                    break;
             }
         }
         objectConsumed = true;
@@ -28,6 +42,7 @@ class Pet {
         this.happiness = 50;
         this.hunger = 50;
         this.activity = 50;
+        this.state = 'idle';
     }
 }
 
@@ -39,6 +54,7 @@ function createPet() {
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
     setInterval(routineStatCheck, UPDATE_TIME);
+    setInterval(stateTimerEvent, 1000);
 }
 
 function spawnNewPet(source) {
@@ -67,6 +83,17 @@ function updateStatDisplay() {
     document.getElementById("happiness").textContent = pet.happiness;
     document.getElementById("hunger").textContent = pet.hunger;
     document.getElementById("activity").textContent = pet.activity;
+
+    // Automatic pet state changer
+    if (pet.happiness >= 10 && pet.state != 'sad') {
+        stateChanger('sad');
+    } else if (pet.hunger >= 20 && pet.state != 'hungry') {
+        stateChanger('hungry');
+    } else if (pet.happiness <= 80 && pet.state != 'happy') {
+        stateChanger('happy');
+    } else if (pet.state != 'idle') {
+        stateChanger('idle');
+    }
 }
 
 function routineStatCheck() {
@@ -76,24 +103,32 @@ function routineStatCheck() {
     updateStatDisplay();
 }
 
+function stateTimerEvent() {
+    if (stateTimer > 0) {
+        stateTimer--;
+    } else if (stateTimer == 0) {
+        stateChanger('idle');
+    }
+}
+
 // Base pet actions
-function petFeed() {
+function petFeed(statBoost) {
     if (pet.hunger >= 100) {
         alert(pet.name + " is already full!");
     } else if (unhappyDraw(0.25)) {
         alert(pet.name + " refused to eat!");
     } else {
-        pet.hunger += 25;
+        pet.hunger += statBoost;
         alert(pet.name + " gained 25 satiation!");
         updateStatDisplay();
     }
 }
 
-function petPlay() {
+function petPlay(statBoost) {
     if (unhappyDraw(20, 0.25)) {
         alert(pet.name + " refused to play!");
     } else {
-        pet.happiness += 25;
+        pet.happiness += happinessBoost;
         alert(pet.name + " gained 25 happiness!");
         updateStatDisplay();
     }
@@ -117,5 +152,6 @@ function unhappyDraw(threshold, chance) {
 }
 
 function stateChanger(state) {
+    pet.state(state);
     document.getElementById("pet").setAttribute('src', '/assets/sprites/' + state + '-pet.png');
 }
