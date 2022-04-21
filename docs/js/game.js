@@ -2,7 +2,6 @@ const UPDATE_TIME = 5000; // Time in ms to update stats
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
-var stateTimer = 0; // For timed pet states
 
 window.onload = function() {
     let activeMarker = document.querySelector("a-marker");
@@ -91,7 +90,6 @@ function updateStatDisplay() {
     } else if (pet.hunger <= 20) {
         if (pet.state != 'hungry') stateChanger('hungry');
     } else if (pet.happiness >= 80) {
-        console.log("here");
         if (pet.state != 'happy') stateChanger('happy');
     } else if (pet.state != 'idle') {
         stateChanger('idle');
@@ -103,14 +101,6 @@ function routineStatCheck() {
     pet.hunger -= IDLE_STAT_DECREASE;
     pet.activity -= IDLE_STAT_DECREASE;
     updateStatDisplay();
-}
-
-function stateTimerEvent() {
-    if (stateTimer > 0) {
-        stateTimer--;
-    } else if (stateTimer == 0) {
-        stateChanger('idle');
-    }
 }
 
 // Base pet actions
