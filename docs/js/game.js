@@ -84,7 +84,6 @@ function updateStatDisplay() {
     document.getElementById("activity").textContent = pet.activity;
 
     // Automatic pet state changer
-    console.log(pet.state);
     if (pet.happiness <= 10) {
         if (pet.state != 'sad') stateChanger('sad');
     } else if (pet.hunger <= 20) {
