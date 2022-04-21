@@ -26,9 +26,9 @@ AFRAME.registerComponent('marker-handler', {
                     alert("Something else");
                     break;
             }
-            objectConsumed == true;
+            objectConsumed = true;
         } else {
-            objectConsumed == false;
+            objectConsumed = false;
         }
     }
 });
