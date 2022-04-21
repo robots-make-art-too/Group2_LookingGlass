@@ -13,7 +13,7 @@ class Pet {
     }
 }
 
-AFRAME.registerComponent('marker-handler', {
+AFRAME.registerComponent('marker-object', {
     tick: function() {
         let activeMarker = document.querySelector("a-marker");
 
