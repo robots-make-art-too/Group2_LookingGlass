@@ -16,7 +16,8 @@ class Pet {
 AFRAME.registerComponent('marker-handler', {
     tick: function() {
         let activeMarker = document.querySelector("a-marker");
-        if(activeMarker.object3D.visible == true && objectConsumed == false) {
+
+        if (activeMarker.object3D.visible == true && objectConsumed == false) {
             switch (activeMarker.id) {
                 case 'tennis-ball-marker':
                     alert("Tennis ball");
@@ -29,6 +30,7 @@ AFRAME.registerComponent('marker-handler', {
         } else {
             objectConsumed = false;
         }
+        console.log(objectConsumed);
     }
 });
 
