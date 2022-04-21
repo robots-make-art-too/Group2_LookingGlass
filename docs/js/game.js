@@ -30,7 +30,6 @@ AFRAME.registerComponent('marker-object', {
         } else {
             objectConsumed = false;
         }
-        console.log(objectConsumed);
     }
 });
 
