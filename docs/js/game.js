@@ -119,7 +119,7 @@ function petFeed(statBoost) {
         alert(pet.name + " refused to eat!");
     } else {
         pet.hunger += statBoost;
-        alert(pet.name + " gained 25 satiation!");
+        alert(pet.name + " gained ${statBoost} satiation!");
         updateStatDisplay();
     }
 }
@@ -129,7 +129,7 @@ function petPlay(statBoost) {
         alert(pet.name + " refused to play!");
     } else {
         pet.happiness += statBoost;
-        alert(pet.name + " gained 25 happiness!");
+        alert(pet.name + " gained ${statBoost} happiness!");
         updateStatDisplay();
     }
 }
@@ -152,6 +152,6 @@ function unhappyDraw(threshold, chance) {
 }
 
 function stateChanger(state) {
-    pet.state(state);
+    pet.state = state;
     document.getElementById("pet").setAttribute('src', '/assets/sprites/' + state + '-pet.png');
 }
