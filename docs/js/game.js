@@ -85,12 +85,12 @@ function updateStatDisplay() {
     document.getElementById("activity").textContent = pet.activity;
 
     // Automatic pet state changer
-    if (pet.happiness >= 10 && pet.state != 'sad') {
-        stateChanger('sad');
-    } else if (pet.hunger >= 20 && pet.state != 'hungry') {
-        stateChanger('hungry');
-    } else if (pet.happiness <= 80 && pet.state != 'happy') {
-        stateChanger('happy');
+    if (pet.happiness <= 10) {
+        if (pet.state != 'sad') stateChanger('sad');
+    } else if (pet.hunger <= 20) {
+        if (pet.state != 'hungry') stateChanger('hungry');
+    } else if (pet.happiness >= 80) {
+        if (pet.state != 'happy') stateChanger('happy');
     } else if (pet.state != 'idle') {
         stateChanger('idle');
     }
