@@ -1,6 +1,7 @@
 const UPDATE_TIME = 5000; // Time in ms to update stats
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
+var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
 class Pet {
     constructor(name) {
@@ -14,9 +15,7 @@ class Pet {
 
 AFRAME.registerComponent('marker-handler', {
     tick: function() {
-        let objectConsumed = false;
         let activeMarker = document.querySelector("a-marker");
-
         if(activeMarker.object3D.visible == true && objectConsumed == false) {
             switch (activeMarker.id) {
                 case 'tennis-ball-marker':
