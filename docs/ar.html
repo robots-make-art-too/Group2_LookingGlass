@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/stylesheet.css">
-        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="js/game.js"></script>
 
         <title>Looking Glass AR</title>
@@ -20,7 +20,7 @@
                 <!-- <a-asset-item id="cake-gltf" src="/assets/models/food/cake.glb"></a-asset-item> -->
             </a-assets>
             
-            <a-marker marker-trigger type="pattern" id="tennis-ball-marker" url="/assets/markers/toys/tennis-ball-marker.patt">
+            <a-marker type="pattern" id="tennis-ball-marker" url="/assets/markers/toys/tennis-ball-marker.patt" emitevents="true">
                 <a-entity id="tennis-ball" scale="10 10 10" gltf-model="#tennis-ball-gltf">
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
                 </a-entity>
