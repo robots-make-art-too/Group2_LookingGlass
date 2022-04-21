@@ -19,12 +19,9 @@ AFRAME.registerComponent('marker-object', {
 
         if (activeObject.object3D.visible == true) {
             switch (activeObject.id) {
-                case 'tennis-ball-marker':
+                case 'tennis-ball':
                     alert("Tennis ball");
                     activeObject.object3D.visible = false;
-                    break;
-                default:
-                    alert("Something else");
                     break;
             }
         } else {
