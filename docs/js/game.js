@@ -3,7 +3,7 @@ const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
-var activeMarker = document.quertySelector('a-marker');
+var activeMarker = document.querySelector('a-marker');
 activeMarker.addEventListener("markerFound", (e) => {
     console.log("found");
     // if (objectConsumed == false) {
