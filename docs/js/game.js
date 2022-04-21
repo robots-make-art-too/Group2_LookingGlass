@@ -20,6 +20,18 @@ var objectConsumed = false; // So that a marker only spawns an object once each 
 //     console.log("lost");
 // })
 
+window.onload = function() {
+    let activeMarker = document.querySelector("a-marker");
+
+    activeMarker.addEventListener("markerFound", (e) => {
+        console.log("found");
+    })
+
+    activeMarker.addEventListener("markerLost", (e) => {
+        console.log("lost");
+    })
+}
+
 class Pet {
     constructor(name) {
         this.name = name;
