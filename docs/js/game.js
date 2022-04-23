@@ -1,4 +1,5 @@
 const UPDATE_TIME = 15000; // Time in ms to update stats
+const CYCLES_TO_AGE = 1;
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
@@ -41,6 +42,7 @@ class Pet {
     constructor(name) {
         this.name = name;
         this.age = 0;
+        this.updateCycles = 0;
         this.happiness = 50;
         this.hunger = 50;
         this.activity = 50;
@@ -101,6 +103,12 @@ function routineStatCheck() {
     pet.happiness -= IDLE_STAT_DECREASE;
     pet.hunger -= IDLE_STAT_DECREASE;
     pet.activity -= IDLE_STAT_DECREASE;
+
+    pet.updateCycles++;
+    if (pet.updateCycles % CYCLES_TO_AGE == 0) {
+        pet.age++;
+    }
+    
     updateStatDisplay();
 }
 
