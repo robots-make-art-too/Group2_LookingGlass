@@ -1,11 +1,11 @@
 @font-face {
     font-family: silkscreen;
-    src: url(/assets/fonts/slkscre.ttf);
+    src: url(/assets/fonts/slkscr.ttf);
 }
 
 @font-face {
     font-family: silkscreen;
-    src: url(/assets/fonts/slkscreb.ttf);
+    src: url(/assets/fonts/slkscrb.ttf);
     font-weight: bold;
 }
 
