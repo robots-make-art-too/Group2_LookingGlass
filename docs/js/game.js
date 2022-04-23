@@ -102,7 +102,7 @@ function updateStatDisplay() {
         alert(`${pet.name} passed away...`);
         let toContinue = confirm("Would you like to create a new pet?");
         if (toContinue == true) {
-            createPet();
+            location.reload();
         } else {
             alert(`Your pet ${pet.name} lived for ${pet.age} years. Thanks for playing!`);
             window.location.href = "/";
