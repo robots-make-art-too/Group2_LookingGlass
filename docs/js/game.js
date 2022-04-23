@@ -81,12 +81,6 @@ function spawnNewPet(source) {
 }
 
 function updateStatDisplay() {
-    document.getElementById("name").textContent = pet.name;
-    document.getElementById("age").textContent = pet.age;
-    document.getElementById("happiness").textContent = pet.happiness;
-    document.getElementById("hunger").textContent = pet.hunger;
-    document.getElementById("activity").textContent = pet.activity;
-
     // Automatic pet state changer
     if (pet.happiness <= 10) {
         if (pet.state != 'sad') stateChanger('sad');
@@ -97,6 +91,30 @@ function updateStatDisplay() {
     } else if (pet.state != 'idle') {
         stateChanger('idle');
     }
+
+    // Don't go below zero
+    if (pet.happiness < 0) pet.happiness = 0;
+    if (pet.hunger < 0) pet.hunger = 0;
+    if (pet.activity < 0) pet.activity = 0;
+
+    // Pet death
+    if (pet.happiness <= 0 && pet.hunger <= 0 && pet.activity <= 0) {
+        alert(`${pet.name} passed away...`);
+        let toContinue = confirm("Would you like to create a new pet?");
+        if (toContinue == true) {
+            createPet();
+        } else {
+            alert(`Your pet ${pet.name} lived for ${pet.age}. Thanks for playing!`);
+            close();
+        }
+    }
+
+    // Edit stat display
+    document.getElementById("name").textContent = pet.name;
+    document.getElementById("age").textContent = pet.age;
+    document.getElementById("happiness").textContent = pet.happiness;
+    document.getElementById("hunger").textContent = pet.hunger;
+    document.getElementById("activity").textContent = pet.activity;
 }
 
 function routineStatCheck() {
@@ -155,4 +173,14 @@ function unhappyDraw(threshold, chance) {
 function stateChanger(state) {
     pet.state = state;
     document.getElementById("pet").setAttribute('src', '/assets/sprites/' + state + '-pet.png');
+}
+
+function drawPetAction(str) {
+    document.getElementById("petAction").style.display = "block";
+    document.getElementById("pet-action-content").textContent(str);
+    setTimeout(hidePetAction, 3000);
+}
+
+function hidePetAction() {
+    document.getElementById("petAction").syle.display = "none";
 }
