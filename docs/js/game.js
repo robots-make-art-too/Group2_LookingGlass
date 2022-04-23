@@ -1,4 +1,4 @@
-const UPDATE_TIME = 5000; // Time in ms to update stats
+const UPDATE_TIME = 15000; // Time in ms to update stats
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
