@@ -1,9 +1,22 @@
+@font-face {
+    font-family: silkscreen;
+    src: url(/assets/fonts/slkscre.ttf);
+}
+
+@font-face {
+    font-family: silkscreen;
+    src: url(/assets/fonts/slkscreb.ttf);
+    font-weight: bold;
+}
+
 #petInfo {
     display: none;
 }
 
 #petInfo p {
     color: white;
+    font-family: silkscreen;
+    font-weight: bold;
 }
 
 #text {
