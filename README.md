@@ -4,7 +4,7 @@
 
 [ContributionLog.md](ContributionLog.md): A log of every notable contribution made to the project, and who made it
 
-[Stable branch of website (rebuilds infrequently)](https://robots-make-art-too.github.io/Group2_LookingGlass/)
+[Stable branch of website (rebuilds infrequently)](https://robots-make-art-too.github.io/Group2_LookingGlass/) **NOTE: NOT CURRENTLY WORKING! Please visit the development branch below.**
 
 [Development branch of website (rebuilds frequently)](https://looking-glass-dev.netlify.app/)
 
