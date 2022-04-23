@@ -1,5 +1,6 @@
 const UPDATE_TIME = 5000; // Time in ms to update stats
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
+const GITHUB_PAGES_FIX = "https://github.com/robots-make-art-too/Group2_LookingGlass/blob/develop/docs"; // Annoying GitHub Pages file linking issue
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
@@ -50,7 +51,7 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Scrumbus");
     pet = new Pet(name);
 
-    spawnNewPet('/assets/sprites/idle-pet.png');
+    spawnNewPet(GITHUB_PAGES_FIX + '/assets/sprites/idle-pet.png');
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
     setInterval(routineStatCheck, UPDATE_TIME);
@@ -144,5 +145,5 @@ function unhappyDraw(threshold, chance) {
 
 function stateChanger(state) {
     pet.state = state;
-    document.getElementById("pet").setAttribute('src', '/assets/sprites/' + state + '-pet.png');
+    document.getElementById("pet").setAttribute('src', GITHUB_PAGES_FIX + '/assets/sprites/' + state + '-pet.png');
 }
