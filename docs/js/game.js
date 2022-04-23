@@ -104,8 +104,8 @@ function updateStatDisplay() {
         if (toContinue == true) {
             createPet();
         } else {
-            alert(`Your pet ${pet.name} lived for ${pet.age}. Thanks for playing!`);
-            close();
+            alert(`Your pet ${pet.name} lived for ${pet.age} years. Thanks for playing!`);
+            window.location.href = "/";
         }
     }
 
