@@ -1,6 +1,6 @@
 const UPDATE_TIME = 15000; // Time in ms to update stats
 const CYCLES_TO_AGE = 25;
-const IDLE_STAT_DECREASE = 50; // Amount to decrease each stat per update
+const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
