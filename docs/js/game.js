@@ -217,10 +217,7 @@ function gpsStepTracker() {
                 let latSteps = latFeet * STEPS_PER_FOOT;
                 let longSteps = longFeet * STEPS_PER_FOOT;
 
-                console.log("Lat steps: " + latSteps);
-                console.log("Long steps: " + longSteps);
-
-                if (latSteps >= 0.6 && longSteps >= 0.6) {
+                if (latSteps >= 0.6 || longSteps >= 0.6) {
                     sessionSteps += latSteps + longSteps;
                     totalSteps += sessionSteps;
                 }
