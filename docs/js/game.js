@@ -8,45 +8,45 @@ window.onload = function() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (!isMobile) {
         alert("This application is only supported on mobile devices. Please open this page on a phone or tablet.")
-        window.stop();
-    } else {
-        createPet();
-
-        const markerNodeList = document.querySelectorAll("a-marker");
-        const markerArr = Array.apply(null, markerNodeList);
-
-        markerArr.forEach(marker =>
-                marker.addEventListener("markerFound", (e) => {
-                console.log(marker.id);
-                if (objectConsumed == false) {
-                    switch (marker.id) {
-                        case 'tennis-ball-marker':
-                            petPlay(15);
-                            break;
-                        case 'bone-marker':  
-                            petPlay(20);
-                            break;
-                        case 'orbit-ball-marker':
-                            petPlay(25);
-                            break;
-                        case 'pet-food-marker':
-                            petFeed(20);
-                            break;
-                        case 'cake-marker':
-                            petFeed(30);
-                            break;
-                    }
-                }
-                objectConsumed = true;
-            })
-        );
-
-        markerArr.forEach(marker =>
-                marker.addEventListener("markerLost", (e) => {
-                objectConsumed = false;
-            })
-        );
+        window.location.href = "/";
     }
+
+    createPet();
+
+    const markerNodeList = document.querySelectorAll("a-marker");
+    const markerArr = Array.apply(null, markerNodeList);
+
+    markerArr.forEach(marker =>
+            marker.addEventListener("markerFound", (e) => {
+            console.log(marker.id);
+            if (objectConsumed == false) {
+                switch (marker.id) {
+                    case 'tennis-ball-marker':
+                        petPlay(15);
+                        break;
+                    case 'bone-marker':  
+                        petPlay(20);
+                        break;
+                    case 'orbit-ball-marker':
+                        petPlay(25);
+                        break;
+                    case 'pet-food-marker':
+                        petFeed(20);
+                        break;
+                    case 'cake-marker':
+                        petFeed(30);
+                        break;
+                }
+            }
+            objectConsumed = true;
+        })
+    );
+
+    markerArr.forEach(marker =>
+            marker.addEventListener("markerLost", (e) => {
+            objectConsumed = false;
+        })
+    );
 }
 
 class Pet {
