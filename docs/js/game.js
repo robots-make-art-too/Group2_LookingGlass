@@ -122,9 +122,9 @@ function updateStatDisplay() {
     if (pet.activity < 0) pet.activity = 0;
 
     // Also don't go above 100
-    if (pet.happiness < 100) pet.happiness = 100;
-    if (pet.hunger < 100) pet.hunger = 100;
-    if (pet.activity < 100) pet.activity = 100;
+    if (pet.happiness > 100) pet.happiness = 100;
+    if (pet.hunger > 100) pet.hunger = 100;
+    if (pet.activity > 100) pet.activity = 100;
 
     // Edit stat display
     document.getElementById("name").textContent = pet.name;
