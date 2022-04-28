@@ -165,6 +165,7 @@ function petFeed(statBoost) {
 }
 
 function petPlay(statBoost) {
+    console.log(playCooldown);
     if (unhappyDraw(20, 0.25)) {
         drawPetAction(pet.name + " refused to play!");
     } else if (playCooldown === true) {
