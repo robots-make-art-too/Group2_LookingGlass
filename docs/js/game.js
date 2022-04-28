@@ -217,7 +217,7 @@ function gpsStepTracker() {
                 let longSteps = longFeet * STEPS_PER_FOOT;
 
                 if (latSteps >= 0.6 || longSteps >= 0.6) {
-                    sessionSteps += latSteps + longSteps;
+                    sessionSteps += Math.round(latSteps + longSteps);
                     totalSteps += sessionSteps;
                 }
 
