@@ -168,7 +168,7 @@ function petPlay(statBoost) {
     if (unhappyDraw(20, 0.25)) {
         drawPetAction(pet.name + " refused to play!");
     } else if (playCooldown === true) {
-        drawPetAction("You're trying to play with your pet too much!\r\n Slow down a little.");
+        drawPetAction("You're playing with your pet too much!\r\n Slow down a little.");
     } else {
         pet.happiness += statBoost;
         playCooldown = true;
