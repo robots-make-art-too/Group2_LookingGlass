@@ -165,7 +165,6 @@ function petFeed(statBoost) {
 }
 
 function petPlay(statBoost) {
-    console.log("bp1: " + playCooldown);
     if (unhappyDraw(20, 0.25)) {
         drawPetAction(pet.name + " refused to play!");
     } else if (playCooldown === true) {
@@ -173,7 +172,6 @@ function petPlay(statBoost) {
     } else {
         pet.happiness += statBoost;
         playCooldown = true;
-        console.log("bp2: " + playCooldown)
         setTimeout("endCooldown('play')", COOLDOWN_TIME);
         drawPetAction(pet.name + ` gained ${statBoost} happiness!`);
         updateStatDisplay();
@@ -213,7 +211,6 @@ function hidePetAction() {
 }
 
 function endCooldown(type) {
-    console.log('cooldown ended');
     if (type == 'feed') feedCooldown = false;
     else if (type == 'play') playCooldown = false;
 }
