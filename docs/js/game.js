@@ -1,7 +1,7 @@
 const UPDATE_TIME = 20000; // Time in ms to update stats
-const CYCLES_TO_AGE = 20;
+const CYCLES_TO_AGE = 20; // How many update cycles for pet to age one year
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
-const COOLDOWN_TIME = 60000;
+const COOLDOWN_TIME = 60000; // Cooldown for using objects
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 var feedCooldown = false, playCooldown = false;
@@ -153,7 +153,7 @@ function petFeed(statBoost) {
         drawPetAction(pet.name + " is already full!");
     } else if (unhappyDraw(0.25)) {
         drawPetAction(pet.name + " refused to eat!");
-    } else if (feedCooldown == true) {
+    } else if (feedCooldown === true) {
         drawPetAction("You're feeding your pet too fast! Slow down a little.");
     } else {
         pet.hunger += statBoost;
@@ -167,7 +167,7 @@ function petFeed(statBoost) {
 function petPlay(statBoost) {
     if (unhappyDraw(20, 0.25)) {
         drawPetAction(pet.name + " refused to play!");
-    } else if (playCooldown == true) {
+    } else if (playCooldown === true) {
         drawPetAction("You're trying to play with your pet too much! Slow down a little.");
     } else {
         pet.happiness += statBoost;
@@ -203,7 +203,7 @@ function stateChanger(state) {
 function drawPetAction(str) {
     document.getElementById("petAction").style.display = "block";
     document.getElementById("pet-action-content").textContent = str;
-    setTimeout(hidePetAction, 5000);
+    setTimeout(hidePetAction, 4000);
 }
 
 function hidePetAction() {
