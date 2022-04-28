@@ -25,6 +25,10 @@
     padding-block-end: 1em;
 }
 
+#petAction p {
+    white-space: pre;
+}
+
 #petInfo p:empty {
     padding: 0;
 }
