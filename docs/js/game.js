@@ -221,7 +221,8 @@ function gpsStepTracker() {
                     totalSteps += sessionSteps;
                 }
 
-                drawPetAction(totalSteps); // TEMP
+                // FOR TESTING STEP TRACKER ON MOBILE
+                // drawPetAction(totalSteps);
 
                 let activityPoints = sessionSteps / 50;
                 if (activityPoints >= 10) {
