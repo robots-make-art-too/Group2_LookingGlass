@@ -16,8 +16,8 @@ window.onload = function() {
                 case 'tennis-ball-marker':
                     petPlay(15);
                     break;
-                case 'bone-marker':
-                    petPlay(20);
+                case 'bone-marker':    
+                    petActivity(20);
                     break;
                 case 'orbit-ball-marker':
                     petPlay(25);
