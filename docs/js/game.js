@@ -5,6 +5,12 @@ var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 
 window.onload = function() {
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+        alert("This application is only supported on mobile devices. Please open this page on a phone or tablet.")
+        window.stop();
+    }
+
     createPet();
 
     const markerNodeList = document.querySelectorAll("a-marker");
@@ -18,8 +24,8 @@ window.onload = function() {
                     case 'tennis-ball-marker':
                         petPlay(15);
                         break;
-                    case 'bone-marker':    
-                        petActivity(20);
+                    case 'bone-marker':  
+                        petPlay(20);
                         break;
                     case 'orbit-ball-marker':
                         petPlay(25);
