@@ -202,23 +202,23 @@ function gpsStepTracker() {
         data => {
             console.log(data);
             newCoords = [data.coords.latitude, data.coords.longitude];
-            console.log("Old coords: " + oldCoords);
-            console.log("New coords: " + newCoords);
             if (oldCoords.length == 0) {
                 oldCoords = [...newCoords];
             } else if (oldCoords[0] != newCoords[0] || (oldCoords[1] != newCoords[1])) {
                 let latChange = Math.abs(newCoords[0] - oldCoords[0]);
                 let longChange = Math.abs(newCoords[1] - oldCoords[1]);
                 oldCoords = [...newCoords];
-                console.log(latChange);
 
                 // Time for some calculations
-                let latSeconds = LAT_LONG_SECOND / latChange;
-                let longSeconds = LAT_LONG_SECOND / longChange;
+                let latSeconds = latChange / LAT_LONG_SECOND;
+                let longSeconds = longChange / LAT_LONG_SECOND;
                 let latFeet = latSeconds * FEET_PER_LAT_SECOND;
                 let longFeet = longSeconds * FEET_PER_LONG_SECOND;
                 let latSteps = latFeet * STEPS_PER_FOOT;
                 let longSteps = longFeet * STEPS_PER_FOOT;
+
+                console.log("Lat steps: " + latSteps);
+                console.log("Long steps: " + longSteps);
 
                 if (latSteps >= 0.6 && longSteps >= 0.6) {
                     sessionSteps += latSteps + longSteps;
