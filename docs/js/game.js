@@ -154,7 +154,7 @@ function petFeed(statBoost) {
     } else if (unhappyDraw(0.25)) {
         drawPetAction(pet.name + " refused to eat!");
     } else if (feedCooldown === true) {
-        drawPetAction("You're feeding your pet too fast!<br> Slow down a little.");
+        drawPetAction("You're feeding your pet too fast!\r\n Slow down a little.");
     } else {
         pet.hunger += statBoost;
         drawPetAction(pet.name + ` gained ${statBoost} satiation!`);
@@ -168,7 +168,7 @@ function petPlay(statBoost) {
     if (unhappyDraw(20, 0.25)) {
         drawPetAction(pet.name + " refused to play!");
     } else if (playCooldown === true) {
-        drawPetAction("You're trying to play with your pet too much!<br> Slow down a little.");
+        drawPetAction("You're trying to play with your pet too much!\r\n Slow down a little.");
     } else {
         pet.happiness += statBoost;
         playCooldown = true;
