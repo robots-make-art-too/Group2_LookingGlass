@@ -7,35 +7,40 @@ var objectConsumed = false; // So that a marker only spawns an object once each 
 window.onload = function() {
     createPet();
 
-    let activeMarker = document.querySelector("a-marker");
+    const markerNodeList = document.querySelectorAll("a-marker");
+    const markerArr = Array.apply(null, markerNodeList);
 
-    activeMarker.addEventListener("markerFound", (e) => {
-        console.log(activeMarker.id);
-        if (objectConsumed == false) {
-            switch (activeMarker.id) {
-                case 'tennis-ball-marker':
-                    petPlay(15);
-                    break;
-                case 'bone-marker':    
-                    petActivity(20);
-                    break;
-                case 'orbit-ball-marker':
-                    petPlay(25);
-                    break;
-                case 'pet-food-marker':
-                    petFeed(20);
-                    break;
-                case 'cake-marker':
-                    petFeed(30);
-                    break;
+    markerArr.forEach(marker =>
+            marker.addEventListener("markerFound", (e) => {
+            console.log(marker.id);
+            if (objectConsumed == false) {
+                switch (marker.id) {
+                    case 'tennis-ball-marker':
+                        petPlay(15);
+                        break;
+                    case 'bone-marker':    
+                        petActivity(20);
+                        break;
+                    case 'orbit-ball-marker':
+                        petPlay(25);
+                        break;
+                    case 'pet-food-marker':
+                        petFeed(20);
+                        break;
+                    case 'cake-marker':
+                        petFeed(30);
+                        break;
+                }
             }
-        }
-        objectConsumed = true;
-    })
+            objectConsumed = true;
+        })
+    );
 
-    activeMarker.addEventListener("markerLost", (e) => {
-        objectConsumed = false;
-    })
+    markerArr.forEach(marker =>
+            marker.addEventListener("markerLost", (e) => {
+            objectConsumed = false;
+        })
+    );
 }
 
 class Pet {
