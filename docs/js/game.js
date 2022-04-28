@@ -114,10 +114,15 @@ function updateStatDisplay() {
         }
     }
 
-    // Otherwise on't go below zero
+    // Otherwise don't go below zero
     if (pet.happiness < 0) pet.happiness = 0;
     if (pet.hunger < 0) pet.hunger = 0;
     if (pet.activity < 0) pet.activity = 0;
+
+    // Also don't go above 100
+    if (pet.happiness < 100) pet.happiness = 100;
+    if (pet.hunger < 100) pet.hunger = 100;
+    if (pet.activity < 100) pet.activity = 100;
 
     // Edit stat display
     document.getElementById("name").textContent = pet.name;
