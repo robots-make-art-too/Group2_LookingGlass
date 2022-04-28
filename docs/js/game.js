@@ -225,6 +225,7 @@ function gpsStepTracker() {
                 let activityPoints = sessionSteps / 50;
                 if (activityPoints >= 10) {
                     pet.activity += Math.round(activityPoints);
+                    updateStatDisplay();
                     drawPetAction(`${pet.name} gained ${activityPoints} activity points!`)
                     sessionSteps = 0;
                 }
