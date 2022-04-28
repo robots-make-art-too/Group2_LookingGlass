@@ -198,41 +198,41 @@ function petWalk() {
 function gpsStepTracker() {
     let oldCoords = [], newCoords = [];
     let sessionSteps = 0;
-    try {
-        navigator.geolocation.watchPosition(
-            data => {
-                newCoords = [data.coords.latitude, data.coords.longitude];
-                if (oldCoords.length = 0) {
-                    oldCoords = newCoords;
-                } else if (oldCoords[0] != newCoords[0] && (oldCoords[1] != newCoords[1])) {
-                    let latChange = Math.abs(newCoords[0] - oldCoords[0]);
-                    let longChange = Math.abs(newCoords[1] - oldCoords[1]);
+    const id = navigator.geolocation.watchPosition(
+        data => {
+            console.log(data);
+            newCoords = [data.coords.latitude, data.coords.longitude];
+            if (oldCoords.length = 0) {
+                oldCoords = newCoords;
+            } else if (oldCoords[0] != newCoords[0] && (oldCoords[1] != newCoords[1])) {
+                let latChange = Math.abs(newCoords[0] - oldCoords[0]);
+                let longChange = Math.abs(newCoords[1] - oldCoords[1]);
 
-                    // Time for some calculations
-                    let latSeconds = LAT_LONG_SECOND / latChange;
-                    let longSeconds = LAT_LONG_SECOND / longChange;
-                    let latFeet = latSeconds * FEET_PER_LAT_SECOND;
-                    let longFeet = longSeconds * FEET_PER_LONG_SECOND;
-                    let latSteps = latFeet * STEPS_PER_FOOT;
-                    let longSteps = longFeet * STEPS_PER_FOOT;
+                // Time for some calculations
+                let latSeconds = LAT_LONG_SECOND / latChange;
+                let longSeconds = LAT_LONG_SECOND / longChange;
+                let latFeet = latSeconds * FEET_PER_LAT_SECOND;
+                let longFeet = longSeconds * FEET_PER_LONG_SECOND;
+                let latSteps = latFeet * STEPS_PER_FOOT;
+                let longSteps = longFeet * STEPS_PER_FOOT;
 
-                    if (latSteps >= 0.6 && longSteps >= 0.6) {
-                        sessionSteps += latSteps + longSteps;
-                        totalSteps += sessionSteps;
-                    }
+                if (latSteps >= 0.6 && longSteps >= 0.6) {
+                    sessionSteps += latSteps + longSteps;
+                    totalSteps += sessionSteps;
+                }
 
-                    let activityPoints = sessionSteps / 50;
-                    if (activityPoints >= 10) {
-                        pet.activity += Math.round(activityPoints);
-                        drawPetAction(`${pet.name} gained ${activityPoints} activity points!`)
-                        sessionSteps = 0;
-                    }
+                let activityPoints = sessionSteps / 50;
+                if (activityPoints >= 10) {
+                    pet.activity += Math.round(activityPoints);
+                    drawPetAction(`${pet.name} gained ${activityPoints} activity points!`)
+                    sessionSteps = 0;
                 }
             }
-        );
-    } catch (e) {
-        console.log(e);
-    }
+        },
+        e => console.log(e), {
+            enableHighAccuracy: true
+        }
+    );
 
 }
 
