@@ -9,7 +9,6 @@ const STEPS_PER_FOOT = 0.4;
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 var feedCooldown = false, playCooldown = false;
-var walkingActive = false;
 var totalSteps = 0;
 
 window.onload = function() {
@@ -41,9 +40,6 @@ window.onload = function() {
                         break;
                     case 'cake-marker':
                         petFeed(25);
-                        break;
-                    case 'walk-marker':
-                        toggleWalk();
                         break;
                 }
             }
@@ -201,6 +197,7 @@ function petWalk() {
 
 function gpsStepTracker() {
     let oldCoords = [], newCoords = [];
+    let sessionSteps = 0;
     try {
         navigator.geolocation.getCurrentPosition(
             data => {
@@ -220,14 +217,15 @@ function gpsStepTracker() {
                     let longSteps = longFeet * STEPS_PER_FOOT;
 
                     if (latSteps >= 0.6 && longSteps >= 0.6) {
-                        combinedSteps += latSteps + longSteps;
+                        sessionSteps += latSteps + longSteps;
+                        totalSteps += sessionSteps;
                     }
 
-                    let activityPoints = combinedSteps / 50;
+                    let activityPoints = sessionSteps / 50;
                     if (activityPoints >= 10) {
                         pet.activity += Math.round(activityPoints);
                         drawPetAction(`${pet.name} gained ${activityPoints} activity points!`)
-                        combinedSteps = 0;
+                        sessionSteps = 0;
                     }
                 }
             }
@@ -261,13 +259,4 @@ function hidePetAction() {
 function endCooldown(type) {
     if (type == 'feed') feedCooldown = false;
     else if (type == 'play') playCooldown = false;
-}
-
-function toggleWalk() {
-    if (walkingActive == false) {
-        walkingActive = true;
-        petWalk();
-    } else {
-        walkingActive = false;
-    }
 }
