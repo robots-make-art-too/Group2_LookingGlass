@@ -16,4 +16,4 @@
 
 One unique feature is how your pet's activity stat works! The game tracks your GPS coordinates and will award your pet at a rate of 10 activity points every 500 GPS steps (approx. 1250 feet / 380 metres). Please note that since it is GPS-based, it will not track steps in a small area accurately, and you will have to go for a walk where you are covering enough distance for it to track accurately.
 
-**Demo videos coming April 28th!**
+**Demo video coming April 28th!**
