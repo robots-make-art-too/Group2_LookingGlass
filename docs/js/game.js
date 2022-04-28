@@ -213,6 +213,7 @@ function hidePetAction() {
 }
 
 function endCooldown(type) {
+    console.log('cooldown ended');
     if (type == 'feed') feedCooldown = false;
     else if (type == 'play') playCooldown = false;
 }
