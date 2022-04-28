@@ -199,7 +199,7 @@ function gpsStepTracker() {
     let oldCoords = [], newCoords = [];
     let sessionSteps = 0;
     try {
-        navigator.geolocation.getCurrentPosition(
+        navigator.geolocation.watchPosition(
             data => {
                 newCoords = [data.coords.latitude, data.coords.longitude];
                 if (oldCoords.length = 0) {
