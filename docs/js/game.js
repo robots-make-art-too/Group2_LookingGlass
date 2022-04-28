@@ -7,10 +7,10 @@ var objectConsumed = false; // So that a marker only spawns an object once each 
 window.onload = function() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (!isMobile) {
+        window.stop();
         alert("This application is only supported on mobile devices. Please open this page on a phone or tablet.")
         window.location.href = "/";
     }
-
     createPet();
 
     const markerNodeList = document.querySelectorAll("a-marker");
