@@ -34,7 +34,7 @@ window.onload = function() {
                         petFeed(20);
                         break;
                     case 'cake-marker':
-                        petFeed(30);
+                        petFeed(25);
                         break;
                 }
             }
