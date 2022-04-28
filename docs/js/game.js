@@ -10,8 +10,7 @@ window.onload = function() {
         window.stop();
         alert("This application is only supported on mobile devices. Please open this page on a phone or tablet.")
         window.location.href = "/";
-    }
-    createPet();
+    } else createPet();
 
     const markerArr = Array.apply(null, document.querySelectorAll("a-marker"));
 
