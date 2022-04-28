@@ -13,8 +13,7 @@ window.onload = function() {
     }
     createPet();
 
-    const markerNodeList = document.querySelectorAll("a-marker");
-    const markerArr = Array.apply(null, markerNodeList);
+    const markerArr = Array.apply(null, document.querySelectorAll("a-marker"));
 
     markerArr.forEach(marker =>
             marker.addEventListener("markerFound", (e) => {
