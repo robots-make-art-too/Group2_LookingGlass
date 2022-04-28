@@ -25,6 +25,10 @@
     padding-block-end: 1em;
 }
 
+#petInfo p:empty {
+    padding: 0;
+}
+
 #petAction {
     display: none;
 }
