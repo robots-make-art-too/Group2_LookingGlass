@@ -200,7 +200,6 @@ function gpsStepTracker() {
     let sessionSteps = 0;
     let id = navigator.geolocation.watchPosition(
         data => {
-            drawPetAction(data); // TEMP
             newCoords = [data.coords.latitude, data.coords.longitude];
             if (oldCoords.length == 0) {
                 oldCoords = [...newCoords];
@@ -221,6 +220,8 @@ function gpsStepTracker() {
                     sessionSteps += latSteps + longSteps;
                     totalSteps += sessionSteps;
                 }
+
+                drawPetAction(totalSteps); // TEMP
 
                 let activityPoints = sessionSteps / 50;
                 if (activityPoints >= 10) {
