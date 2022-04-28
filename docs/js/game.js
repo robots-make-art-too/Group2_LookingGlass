@@ -161,7 +161,7 @@ function petWalk() {
         alert(pet.name + " is too hungry to walk!");
     } else {
         pet.activity += 25;
-        drawPetAction(pet.name + " gained 25 activity points!");
+        setTimeout(drawPetAction(pet.name + " gained 25 activity points!"), 500);
         updateStatDisplay();
     }
 }
