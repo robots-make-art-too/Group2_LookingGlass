@@ -198,7 +198,7 @@ function petWalk() {
 function gpsStepTracker() {
     let oldCoords = [], newCoords = [];
     let sessionSteps = 0;
-    const id = navigator.geolocation.watchPosition(
+    let id = navigator.geolocation.watchPosition(
         data => {
             console.log(data);
             newCoords = [data.coords.latitude, data.coords.longitude];
