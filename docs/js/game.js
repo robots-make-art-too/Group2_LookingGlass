@@ -202,6 +202,8 @@ function gpsStepTracker() {
         data => {
             console.log(data);
             newCoords = [data.coords.latitude, data.coords.longitude];
+            console.log("Old coords: " + oldCoords);
+            console.log("New coords: " + newCoords);
             if (oldCoords.length == 0) {
                 oldCoords = [...newCoords];
             } else if (oldCoords[0] != newCoords[0] && (oldCoords[1] != newCoords[1])) {
@@ -230,7 +232,7 @@ function gpsStepTracker() {
                 }
             }
         },
-        e => console.log(e), {
+        e => console.log("Error: " + e), {
             enableHighAccuracy: true
         }
     );
