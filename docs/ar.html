@@ -17,7 +17,8 @@
             <a-assets>
                 <a-asset-item id="tennis-ball-gltf" src="/assets/models/toys/tennis-ball.glb"></a-asset-item>
                 <a-asset-item id="orbit-ball-gltf" src="/assets/models/toys/orbit-ball.glb"></a-asset-item>
-                <!-- <a-asset-item id="cake-gltf" src="/assets/models/food/cake.glb"></a-asset-item> -->
+                <a-asset-item id="bone-gltf" src="/assets/models/toys/bone.glb"></a-asset-item>
+                <a-asset-item id="cake-gltf" src="/assets/models/food/cake.glb"></a-asset-item>
             </a-assets>
             
             <a-marker type="pattern" id="tennis-ball-marker" url="/assets/markers/toys/tennis-ball-marker.patt">
@@ -33,37 +34,33 @@
             </a-marker>
 
             <a-marker type="pattern" id="pet-food-marker" url="/assets/markers/food/pet-food-marker.patt">
-                <a-entity id="pet-food" scale="10 10 10" gltf-model="#tennis-ball-gltf">
+                <a-entity id="pet-food" scale="0.1 0.1 0.1" gltf-model="#cake-gltf">
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
                 </a-entity>
             </a-marker>
 
             <a-marker type="pattern" id="cake-marker" url="/assets/markers/food/cake-marker.patt">
-                <a-entity id="cake" scale="10 10 10" gltf-model="#tennis-ball-gltf">
+                <a-entity id="cake" scale="0.1 0.1 0.1" gltf-model="#cake-gltf">
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
                 </a-entity>
             </a-marker>
 
             <a-marker type="pattern" id="bone-marker" url="/assets/markers/toys/bone-marker.patt">
-                <a-entity id="bone" scale="10 10 10" gltf-model="#tennis-ball-gltf">
+                <a-entity id="bone" scale="10 10 10" gltf-model="#bone-gltf">
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
                 </a-entity>
             </a-marker>
 
-            <a-marker preset='hiro' >
-                <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-            </a-marker>
-
-            <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-                <button onclick="createPet()">Create a pet</button>
+            <div style='position: relative; width: 100%; text-align: center; z-index: 1;'>
                 <div id="petInfo">
-                    <button onclick="petPlay()">Play</button>
-                    <button onclick="petFeed()">Feed</button>
-                    <button onclick="petWalk()">Walk</button>
                     <p>
                         Name: <span id="name"></span> / <span id="age"></span> years old
                         <br>
                         Happiness: <span id="happiness"></span> / Hunger: <span id="hunger"></span> / Activity: <span id="activity"></span>
+                        <div id="petAction">
+                            <br>
+                            <p><span id="pet-action-content"></span></p>
+                        </div>
                     </p>
                 </div>
             </div>

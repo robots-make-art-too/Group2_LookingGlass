@@ -1,9 +1,40 @@
+@font-face {
+    font-family: silkscreen;
+    src: url(/assets/fonts/slkscr.ttf);
+}
+
+@font-face {
+    font-family: silkscreen;
+    src: url(/assets/fonts/slkscrb.ttf);
+    font-weight: bold;
+}
+
 #petInfo {
     display: none;
 }
 
 #petInfo p {
     color: white;
+    font-family: silkscreen;
+    font-size: 0.95em;
+    background-color: rgba(0, 0, 0, 0.25);
+    overflow-wrap: normal;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-block-start: 1em;
+    padding-block-end: 1em;
+}
+
+#petAction p {
+    white-space: pre;
+}
+
+#petInfo p:empty {
+    padding: 0;
+}
+
+#petAction {
+    display: none;
 }
 
 #text {
