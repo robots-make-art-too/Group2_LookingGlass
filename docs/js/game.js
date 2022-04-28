@@ -1,5 +1,6 @@
 const UPDATE_TIME = 20000; // Time in ms to update stats
 const CYCLES_TO_AGE = 20;
+const ALERT_DELAY = 500;
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
@@ -134,34 +135,34 @@ function routineStatCheck() {
 // Base pet actions
 function petFeed(statBoost) {
     if (pet.hunger >= 100) {
-        alert(pet.name + " is already full!");
+        setTimeout(drawPetAction(pet.name + " is already full!"), ALERT_DELAY);
     } else if (unhappyDraw(0.25)) {
-        alert(pet.name + " refused to eat!");
+        setTimeout((pet.name + " refused to eat!"), ALERT_DELAY);
     } else {
         pet.hunger += statBoost;
-        drawPetAction(pet.name + ` gained ${statBoost} satiation!`);
+        setTimeout(drawPetAction(pet.name + ` gained ${statBoost} satiation!`), ALERT_DELAY);
         updateStatDisplay();
     }
 }
 
 function petPlay(statBoost) {
     if (unhappyDraw(20, 0.25)) {
-        alert(pet.name + " refused to play!");
+        setTimeout(drawPetAction(pet.name + " refused to play!"), ALERT_DELAY);
     } else {
         pet.happiness += statBoost;
-        drawPetAction(pet.name + ` gained ${statBoost} happiness!`);
+        setTimeout(drawPetAction(pet.name + ` gained ${statBoost} happiness!`), ALERT_DELAY);
         updateStatDisplay();
     }
 }
 
 function petWalk() {
     if (unhappyDraw(20, 0.25)) {
-        alert(pet.name + " refused to walk!");
+        setTimeout(drawPetAction(pet.name + " refused to walk!"), ALERT_DELAY);
     } else if (pet.hunger < 10) {
-        alert(pet.name + " is too hungry to walk!");
+        setTimeout(drawPetAction(pet.name + " is too hungry to walk!"), ALERT_DELAY);
     } else {
         pet.activity += 25;
-        setTimeout(drawPetAction(pet.name + " gained 25 activity points!"), 500);
+        setTimeout(drawPetAction(pet.name + " gained 25 activity points!"), ALERT_DELAY);
         updateStatDisplay();
     }
 }
@@ -179,7 +180,7 @@ function stateChanger(state) {
 function drawPetAction(str) {
     document.getElementById("petAction").style.display = "block";
     document.getElementById("pet-action-content").textContent = str;
-    setTimeout(hidePetAction, 4000);
+    setTimeout(hidePetAction, 5000);
 }
 
 function hidePetAction() {
