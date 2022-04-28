@@ -2,9 +2,15 @@ const UPDATE_TIME = 20000; // Time in ms to update stats
 const CYCLES_TO_AGE = 20; // How many update cycles for pet to age one year
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 const COOLDOWN_TIME = 60000; // Cooldown for using objects
+const LAT_LONG_SECOND = 1/60/60;
+const FEET_PER_LAT_SECOND = 100;
+const FEET_PER_LONG_SECOND = 75;
+const STEPS_PER_FOOT = 0.4;
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
 var feedCooldown = false, playCooldown = false;
+var walkingActive = false;
+var totalSteps = 0;
 
 window.onload = function() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -35,6 +41,9 @@ window.onload = function() {
                         break;
                     case 'cake-marker':
                         petFeed(25);
+                        break;
+                    case 'walk-marker':
+                        toggleWalk();
                         break;
                 }
             }
@@ -69,6 +78,7 @@ function createPet() {
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
     setInterval(routineStatCheck, UPDATE_TIME);
+    gpsStepTracker();
 }
 
 function spawnNewPet(source) {
@@ -173,21 +183,59 @@ function petPlay(statBoost) {
         pet.happiness += statBoost;
         playCooldown = true;
         setTimeout("endCooldown('play')", COOLDOWN_TIME);
-        drawPetAction(pet.name + ` gained ${statBoost} happiness!`);
+        drawPetAction(`${pet.name} gained ${statBoost} happiness!`);
         updateStatDisplay();
     }
 }
 
 function petWalk() {
     if (unhappyDraw(20, 0.25)) {
-        drawPetAction(pet.name + " refused to walk!");
+        drawPetAction(`${pet.name} refused to walk!`);
     } else if (pet.hunger < 10) {
-        drawPetAction(pet.name + " is too hungry to walk!");
+        drawPetAction(`${pet.name} is too hungry to walk!`);
     } else {
-        pet.activity += 25;
-        drawPetAction(pet.name + " gained 25 activity points!");
+        drawPetAction("Start walking to gain activity points!");
         updateStatDisplay();
     }
+}
+
+function gpsStepTracker() {
+    let oldCoords = [], newCoords = [];
+    try {
+        navigator.geolocation.getCurrentPosition(
+            data => {
+                newCoords = [data.coords.latitude, data.coords.longitude];
+                if (oldCoords.length = 0) {
+                    oldCoords = newCoords;
+                } else if (oldCoords[0] != newCoords[0] && (oldCoords[1] != newCoords[1])) {
+                    let latChange = Math.abs(newCoords[0] - oldCoords[0]);
+                    let longChange = Math.abs(newCoords[1] - oldCoords[1]);
+
+                    // Time for some calculations
+                    let latSeconds = LAT_LONG_SECOND / latChange;
+                    let longSeconds = LAT_LONG_SECOND / longChange;
+                    let latFeet = latSeconds * FEET_PER_LAT_SECOND;
+                    let longFeet = longSeconds * FEET_PER_LONG_SECOND;
+                    let latSteps = latFeet * STEPS_PER_FOOT;
+                    let longSteps = longFeet * STEPS_PER_FOOT;
+
+                    if (latSteps >= 0.6 && longSteps >= 0.6) {
+                        combinedSteps += latSteps + longSteps;
+                    }
+
+                    let activityPoints = combinedSteps / 50;
+                    if (activityPoints >= 10) {
+                        pet.activity += Math.round(activityPoints);
+                        drawPetAction(`${pet.name} gained ${activityPoints} activity points!`)
+                        combinedSteps = 0;
+                    }
+                }
+            }
+        );
+    } catch (e) {
+        console.log(e);
+    }
+
 }
 
 // Misc functions
@@ -213,4 +261,13 @@ function hidePetAction() {
 function endCooldown(type) {
     if (type == 'feed') feedCooldown = false;
     else if (type == 'play') playCooldown = false;
+}
+
+function toggleWalk() {
+    if (walkingActive == false) {
+        walkingActive = true;
+        petWalk();
+    } else {
+        walkingActive = false;
+    }
 }
