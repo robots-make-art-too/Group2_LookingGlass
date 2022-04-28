@@ -204,6 +204,7 @@ function gpsStepTracker() {
             newCoords = [data.coords.latitude, data.coords.longitude];
             if (oldCoords.length == 0) {
                 oldCoords = [...newCoords];
+                console.log(oldCoords);
             } else if (oldCoords[0] != newCoords[0] && (oldCoords[1] != newCoords[1])) {
                 let latChange = Math.abs(newCoords[0] - oldCoords[0]);
                 let longChange = Math.abs(newCoords[1] - oldCoords[1]);
