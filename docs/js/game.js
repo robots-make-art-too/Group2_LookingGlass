@@ -159,7 +159,7 @@ function petFeed(statBoost) {
         pet.hunger += statBoost;
         drawPetAction(pet.name + ` gained ${statBoost} satiation!`);
         feedCooldown = true;
-        setTimeout(endCooldown('feed'), COOLDOWN_TIME);
+        setTimeout("endCooldown('feed')", COOLDOWN_TIME);
         updateStatDisplay();
     }
 }
@@ -174,7 +174,7 @@ function petPlay(statBoost) {
         pet.happiness += statBoost;
         playCooldown = true;
         console.log("bp2: " + playCooldown)
-        setTimeout(endCooldown('play'), COOLDOWN_TIME);
+        setTimeout("endCooldown('play')", COOLDOWN_TIME);
         drawPetAction(pet.name + ` gained ${statBoost} happiness!`);
         updateStatDisplay();
     }
