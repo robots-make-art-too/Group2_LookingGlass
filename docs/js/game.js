@@ -224,9 +224,9 @@ function gpsStepTracker() {
                 // FOR TESTING STEP TRACKER ON MOBILE
                 // drawPetAction(totalSteps);
 
-                let activityPoints = sessionSteps / 50;
+                let activityPoints = Math.round(sessionSteps / 50);
                 if (activityPoints >= 10) {
-                    pet.activity += Math.round(activityPoints);
+                    pet.activity += activityPoints;
                     updateStatDisplay();
                     drawPetAction(`${pet.name} gained ${activityPoints} activity points!`)
                     sessionSteps = 0;
