@@ -178,7 +178,7 @@ function stateChanger(state) {
 
 function drawPetAction(str) {
     document.getElementById("petAction").style.display = "block";
-    document.getElementById("pet-action-content").textContent(str);
+    document.getElementById("pet-action-content").textContent = str;
     setTimeout(hidePetAction, 3000);
 }
 
