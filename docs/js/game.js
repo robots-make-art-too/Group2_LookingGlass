@@ -139,7 +139,7 @@ function petFeed(statBoost) {
         alert(pet.name + " refused to eat!");
     } else {
         pet.hunger += statBoost;
-        alert(pet.name + ` gained ${statBoost} satiation!`);
+        drawPetAction(pet.name + ` gained ${statBoost} satiation!`);
         updateStatDisplay();
     }
 }
@@ -149,7 +149,7 @@ function petPlay(statBoost) {
         alert(pet.name + " refused to play!");
     } else {
         pet.happiness += statBoost;
-        alert(pet.name + ` gained ${statBoost} happiness!`);
+        drawPetAction(pet.name + ` gained ${statBoost} happiness!`);
         updateStatDisplay();
     }
 }
@@ -161,7 +161,7 @@ function petWalk() {
         alert(pet.name + " is too hungry to walk!");
     } else {
         pet.activity += 25;
-        alert(pet.name + " gained 25 activity points!");
+        drawPetAction(pet.name + " gained 25 activity points!");
         updateStatDisplay();
     }
 }
