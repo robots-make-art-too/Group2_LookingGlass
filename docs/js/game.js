@@ -1,6 +1,5 @@
 const UPDATE_TIME = 20000; // Time in ms to update stats
 const CYCLES_TO_AGE = 20;
-const ALERT_DELAY = 1000;
 const IDLE_STAT_DECREASE = 1; // Amount to decrease each stat per update
 var pet; // To be defined when pet is created
 var objectConsumed = false; // So that a marker only spawns an object once each time it is brought into view
@@ -135,34 +134,34 @@ function routineStatCheck() {
 // Base pet actions
 function petFeed(statBoost) {
     if (pet.hunger >= 100) {
-        setTimeout(drawPetAction(pet.name + " is already full!"), ALERT_DELAY);
+        drawPetAction(pet.name + " is already full!");
     } else if (unhappyDraw(0.25)) {
-        setTimeout((pet.name + " refused to eat!"), ALERT_DELAY);
+        drawPetAction(pet.name + " refused to eat!");
     } else {
         pet.hunger += statBoost;
-        setTimeout(drawPetAction(pet.name + ` gained ${statBoost} satiation!`), ALERT_DELAY);
+        drawPetAction(pet.name + ` gained ${statBoost} satiation!`);
         updateStatDisplay();
     }
 }
 
 function petPlay(statBoost) {
     if (unhappyDraw(20, 0.25)) {
-        setTimeout(drawPetAction(pet.name + " refused to play!"), ALERT_DELAY);
+        drawPetAction(pet.name + " refused to play!");
     } else {
         pet.happiness += statBoost;
-        setTimeout(drawPetAction(pet.name + ` gained ${statBoost} happiness!`), ALERT_DELAY);
+        drawPetAction(pet.name + ` gained ${statBoost} happiness!`);
         updateStatDisplay();
     }
 }
 
 function petWalk() {
     if (unhappyDraw(20, 0.25)) {
-        setTimeout(drawPetAction(pet.name + " refused to walk!"), ALERT_DELAY);
+        drawPetAction(pet.name + " refused to walk!");
     } else if (pet.hunger < 10) {
-        setTimeout(drawPetAction(pet.name + " is too hungry to walk!"), ALERT_DELAY);
+        drawPetAction(pet.name + " is too hungry to walk!");
     } else {
         pet.activity += 25;
-        setTimeout(drawPetAction(pet.name + " gained 25 activity points!"), ALERT_DELAY);
+        drawPetAction(pet.name + " gained 25 activity points!");
         updateStatDisplay();
     }
 }
