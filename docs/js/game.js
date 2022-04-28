@@ -200,7 +200,7 @@ function gpsStepTracker() {
     let sessionSteps = 0;
     let id = navigator.geolocation.watchPosition(
         data => {
-            console.log(data);
+            drawPetAction(data); // TEMP
             newCoords = [data.coords.latitude, data.coords.longitude];
             if (oldCoords.length == 0) {
                 oldCoords = [...newCoords];
