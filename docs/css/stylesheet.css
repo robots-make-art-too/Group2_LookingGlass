@@ -10,7 +10,7 @@
 }
 
 #petInfo {
-    display: none;
+    display: block;
 }
 
 #petInfo p {
