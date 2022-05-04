@@ -71,7 +71,7 @@ function createPet() {
     let name = prompt("What will you name your pet?", "Scrumbus");
     pet = new Pet(name);
 
-    spawnNewPet('/assets/sprites/idle-pet.png');
+    spawnNewPet('https://raw.githack.com/robots-make-art-too/Group2_LookingGlass/develop/docs/assets/sprites/idle-pet.png');
     document.getElementById("petInfo").style.display = "block";
     updateStatDisplay();
     setInterval(routineStatCheck, UPDATE_TIME);
@@ -248,7 +248,7 @@ function unhappyDraw(threshold, chance) {
 
 function stateChanger(state) {
     pet.state = state;
-    document.getElementById("pet").setAttribute('src', '/assets/sprites/' + state + '-pet.png');
+    document.getElementById("pet").setAttribute('src', 'https://raw.githack.com/robots-make-art-too/Group2_LookingGlass/develop/docs/assets/sprites/' + state + '-pet.png');
 }
 
 function drawPetAction(str) {
