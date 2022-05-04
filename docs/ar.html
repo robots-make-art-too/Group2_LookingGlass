@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/stylesheet.css">
-        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://rawcdn.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://cdn.statically.io/gh/donmccurdy/aframe-extras/fe293f78/dist/aframe-extras.loaders.js"></script>
+<!--         <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script> -->
         <script src="js/game.js"></script>
 
         <title>Looking Glass AR</title>
@@ -12,7 +14,10 @@
 
     <body style='margin : 0px; overflow: hidden;'>
 
-        <a-scene embedded arjs='sourceType: webcam;'>
+        <a-scene embedded 
+                 vr-mode-ui="enabled: false" 
+                 arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+                 renderer="antialias: true; alpha: true">
 
             <a-assets>
                 <a-asset-item id="tennis-ball-gltf" src="https://raw.githack.com/robots-make-art-too/Group2_LookingGlass/develop/docs/assets/models/toys/tennis-ball.glb"></a-asset-item>
@@ -50,7 +55,11 @@
                     <a-animation attribute="rotation" dur="10000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
                 </a-entity>
             </a-marker>
-
+            
+<!--             <a-camera-static/> -->
+            <a-entity camera></a-entity>
+        </a-scene>
+        
             <div style='position: relative; width: 100%; text-align: center; z-index: 1;'>
                 <div id="petInfo">
                     <p>
@@ -64,9 +73,5 @@
                     </p>
                 </div>
             </div>
-
-<!--             <a-camera-static/> -->
-            <a-entity camera></a-entity>
-        </a-scene>
     </body>
 </html>
