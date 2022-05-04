@@ -1,11 +1,11 @@
 @font-face {
     font-family: silkscreen;
-    src: url(/assets/fonts/slkscr.ttf);
+    src: url(https://raw.githack.com/robots-make-art-too/Group2_LookingGlass/develop/docs/assets/fonts/slkscr.ttf);
 }
 
 @font-face {
     font-family: silkscreen;
-    src: url(/assets/fonts/slkscrb.ttf);
+    src: url(https://raw.githack.com/robots-make-art-too/Group2_LookingGlass/develop/docs/assets/fonts/slkscrb.ttf);
     font-weight: bold;
 }
 
