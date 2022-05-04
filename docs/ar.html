@@ -16,20 +16,20 @@
       
         <a-scene embedded 
                  vr-mode-ui="enabled: false" 
-                 arjs="sourceType: webcam; debugUIEnabled: false;"
+                 arjs="sourceType: webcam; debugUIEnabled: false; videoTexture: true;"
                  renderer="antialias: true; alpha: true">
             
-            <div style='position: relative; width: 100%; text-align: center; z-index: 1;'>
+            <div style='position: relative; width: 100%; text-align: center; z-index: -1;'>
                 <div id="petInfo">
                     <p>
                         Name: <span id="name"></span> / <span id="age"></span> years old
                         <br>
                         Happiness: <span id="happiness"></span> / Hunger: <span id="hunger"></span> / Activity: <span id="activity"></span>
-                    </p>
-                </div>
-                <div id="petAction">
-                    <br>
-                    <p><span id="pet-action-content"></span></p>
+                    </p>    
+                    <div id="petAction">
+                        <br>
+                        <p><span id="pet-action-content"></span></p>
+                    </div>
                 </div>
             </div>
             
