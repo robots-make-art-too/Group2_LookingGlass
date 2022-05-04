@@ -19,7 +19,6 @@ window.onload = function() {
 //         alert("This application is only supported on mobile devices. Please open this page on a phone or tablet.")
 //         window.location.href = "/";
 //     } else createPet();
-    }
 
     const markerArr = Array.apply(null, document.querySelectorAll("a-marker"));
 
