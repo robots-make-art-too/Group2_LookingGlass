@@ -10,7 +10,7 @@
 }
 
 #petInfo {
-    display: block;
+    display: none;
 }
 
 #petInfo p {
@@ -34,7 +34,7 @@
 }
 
 #petAction {
-    display: block;
+    display: none;
 }
 
 #text {
